@@ -45,6 +45,7 @@ const toc = computed(() => doc.value?.body?.toc?.links || []);
 import TocContent from "~/components/UI/TocContent.vue";
 import Navbar from "~/components/Navbar.vue";
 import SearchBar from "~/components/SearchBar.vue";
+console.log("I am pushing changes....");
 </script>
 
 
