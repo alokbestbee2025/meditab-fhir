@@ -49,15 +49,18 @@ export default defineNuxtConfig({
   },
   // --- END: Added Vuetify Configuration ---
 
-  css: [
-    '~/assets/css/markdown-theme4.css',
-  ],
+  css: [],
   app: {
     head: {
       link: [
         {
           rel: 'stylesheet',
           href: 'https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css'
+        },
+         // THIS IS THE NEW, FULL-PROOF LINK TO YOUR THEME
+        {
+          rel: 'stylesheet',
+          href: '/css/markdown-theme4.css' // The path is relative to the public directory
         }
       ]
     }
