@@ -1,0 +1,393 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--v-theme-primary)) !important;
+  border-radius: 4px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgb(var(--v-theme-tborder)) !important;
+}
+/* Site Header Theme... */
+.appbar-header{
+  background: url('/Top.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 0 20px;
+}
+
+.header-navbar {
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: center !important;
+  justify-content: start;
+  height: 100%;
+
+}
+.header-navbar a {
+  text-decoration: none !important;
+  color: rgb(var(--v-theme-headerItem)) !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-weight: 500;
+}
+.header-navbar a:hover{
+  color: rgb(var(--v-theme-headerItem)) !important;
+  background-color: rgb(var(--v-theme-secondary)) !important;
+}
+.header-navbar a.active-link {
+  color: rgb(var(--v-theme-headerItem)) !important;
+  background-color: rgb(var(--v-theme-secondary)) !important;
+}
+
+/* Table Styling */
+.markdown-content table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-bottom: 3rem;
+  font-size: 0.95rem !important;
+}
+
+thead {
+  background-color: #d8d8d8 !important;
+  color: rgb(var(--v-theme-)) !important;
+}
+
+th,
+td {
+  border: 1px solid #eaebed;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+/* Table Styling */
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+  background: var(--v-theme-background);
+  box-shadow: 0 1px 4px rgba(30, 60, 97, 0.04);
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+}
+.markdown-content thead {
+  background: rgb(var(--v-theme-primary));
+}
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid var(--v-theme-outline-variant, #e0e0e0);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.markdown-content th {
+  color: rgb(var(--v-theme-text)) !important;
+  background: rgb(var(--v-theme-text));
+  font-weight: 600;
+}
+.markdown-content tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--v-theme-primary) 3%, transparent);
+}
+/* Table Styling */
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+  background: var(--v-theme-background);
+  box-shadow: 0 1px 4px rgba(30, 60, 97, 0.04);
+  /* border-radius: 0.5rem; */
+  overflow: hidden;
+}
+.markdown-content thead {
+  background: rgb(var(--v-theme-primary));
+}
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid rgb(var(--v-theme-tborder));
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.markdown-content tbody tr {
+  background-color: #eaebed;
+}
+.markdown-content th {
+  color: rgb(var(--v-theme-thead));
+  background: rgb(var(--v-theme-theadin ));
+  font-weight: 600;
+}
+.markdown-content tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--v-theme-primary) 3%, transparent);
+}
+
+@media (max-width: 768px) {
+  .markdown-content th,
+  .markdown-content td {
+    padding: 0.75rem 0.5rem;
+  }
+  .markdown-content tr {
+    margin-bottom: 1rem;
+  }
+}
+
+/*  ChatGPT CSS */
+/* Use Vuetify theme variables for colors */
+
+body,
+.markdown-content {
+  color: var(--v-theme-on-background);
+  background: var(--v-theme-background);
+  line-height: 1.7;
+}
+
+.markdown-content .fhir-navbar-item {
+  background-color: rgb(var(--v-theme-navItem)) !important;
+}
+/* Headings */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(var(--v-theme-heading));
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.markdown-content p,
+.markdown-content li,
+.markdown-content blockquote {
+   font-family: "Roboto", sans-serif;
+  color: rgb(var(--v-theme-text));
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content h1 {
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.markdown-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.markdown-content h2 a {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.markdown-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.markdown-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.markdown-content h5 {
+  color: var(--v-theme-third);
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+.markdown-content h6 {
+  color: var(--v-theme-warning);
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.markdown-rendered-content p a, .markdown-rendered-content li a, .markdown-rendered-content table a{
+  color: rgb(var(--v-theme-fifth)) !important;
+}
+.markdown-rendered-content ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+}
+/* Links */
+.markdown-content a {
+   font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
+.markdown-content a:hover,
+.markdown-content a:focus {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .markdown-content th,
+  .markdown-content td {
+    padding: 0.75rem 0.5rem;
+  }
+  .markdown-content tr {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Code Block */
+/* Code block styles */
+.markdown-content pre {
+  background-color: rgb(var(--v-theme-heading)) !important;
+  border-radius: 8px;
+  max-height: 500px;
+}
+pre[class*="language-"] {
+  margin: 0;
+  padding: 1em;
+  overflow: auto;
+  border-radius: 0 0 4px 4px;
+}
+
+:not(pre) > code {
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  background: rgb(var(--v-theme-surface-variant));
+  color: rgb(var(--v-theme-primary));
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8e908c;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #c76b29;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #718c00;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #007aa6;
+}
+
+/* Add this to the end of your markdown-theme.css */
+
+/* Code highlighting */
+.markdown-content pre {
+  border-radius: 8px;
+}
+
+.markdown-content code {
+  font-family: "Fira Code", Monaco, Consolas, monospace;
+}
+
+/* Dark theme syntax colors */
+.v-theme--dark .token.comment,
+.v-theme--dark .token.prolog,
+.v-theme--dark .token.doctype,
+.v-theme--dark .token.cdata {
+  color: #8b949e;
+}
+
+.v-theme--dark .token.punctuation {
+  color: #c9d1d9;
+}
+
+.v-theme--dark .token.property,
+.v-theme--dark .token.tag,
+.v-theme--dark .token.boolean,
+.v-theme--dark .token.number,
+.v-theme--dark .token.constant,
+.v-theme--dark .token.symbol,
+.v-theme--dark .token.deleted {
+  color: #79c0ff;
+}
+
+.v-theme--dark .token.selector,
+.v-theme--dark .token.attr-name,
+.v-theme--dark .token.string,
+.v-theme--dark .token.char,
+.v-theme--dark .token.builtin,
+.v-theme--dark .token.inserted {
+  color: #7ee787;
+}
+
+/* Light theme syntax colors */
+.v-theme--light .token.comment,
+.v-theme--light .token.prolog,
+.v-theme--light .token.doctype,
+.v-theme--light .token.cdata {
+  color: #6e7781;
+}
+
+.v-theme--light .token.punctuation {
+  color: #24292f;
+}
+
+.v-theme--light .token.property,
+.v-theme--light .token.tag,
+.v-theme--light .token.boolean,
+.v-theme--light .token.number,
+.v-theme--light .token.constant,
+.v-theme--light .token.symbol,
+.v-theme--light .token.deleted {
+  color: #0550ae;
+}
+
+.v-theme--light .token.selector,
+.v-theme--light .token.attr-name,
+.v-theme--light .token.string,
+.v-theme--light .token.char,
+.v-theme--light .token.builtin,
+.v-theme--light .token.inserted {
+  color: #116329;
+}
+
+
+pre.shiki.github-dark {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+
+/* assets/css/shiki-dark.css */
+.shiki,
+.shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}

@@ -1,0 +1,76 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Required/Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Id ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">String</a> )</td>
+      <td>The AllergyIntolerance FHIR ID.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>active ( <a href="https://www.hl7.org/fhir/datatypes.html" target="_blank">Boolean</a> )</td>
+      <td>If the patient record is active or inactive. (True & False)</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>address( <a href="https://hl7.org/fhir/R4/datatypes.html#Address" target="_blank">Address</a> )</td>
+      <td>If the allergy is on the patient's chart, this element specifies "confirmed". If it is a newly created allergy and still needs to be reconciled, it is "unconfirmed".</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>birthDate ( <a href="https://hl7.org/fhir/search.html#date" target="_blank">date</a> )</td>
+      <td>Date (MM-DD-YYYY) of the patient.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>Communication ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>A list of languages used to communicate with the patient, along with an indicator of which is preferred.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>contact ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Patient Contact details.</td>
+      <td>Required</td>
+    </tr>
+     <tr>
+      <td>gender ( <a href="https://hl7.org/fhir/R4/datatypes.html#code" target="_blank">code</a> )</td>
+      <td>Patient legal Sex.</td>
+      <td>Required</td>
+    </tr>
+     <tr>
+      <td>race ( <a href="https://hl7.org/fhir/us/core/STU3.1/StructureDefinition-us-core-patient-definitions.html#Patient.extension:race" target="_blank">Extension</a> )</td>
+      <td>Patient Race.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>telecom ( <a href="https://hl7.org/fhir/R4/datatypes.html#ContactPoint" target="_blank">ContactPoint</a> )</td>
+      <td>Patient telecom details.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>ethnicity ( <a href="https://hl7.org/fhir/us/core/STU3.1/StructureDefinition-us-core-patient-definitions.html#Patient.extension:ethnicity" target="_blank">Extension</a> )</td>
+      <td>Patient telecom details.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>Language ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Patient Ethnicity.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>maritalStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
+      <td>Patient Language.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>name ( <a href="https://hl7.org/fhir/R4/datatypes.html#HumanName" target="_blank">HumanName</a> )</td>
+      <td>The patient's family (last), Given (First & Middle) name, Prefix or Suffix in a codeable concept or string.</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
