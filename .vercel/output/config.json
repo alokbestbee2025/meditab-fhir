@@ -4,26 +4,26 @@
     "index.html": {
       "path": ""
     },
-    "Documentation/index.html": {
-      "path": "Documentation"
+    "Build-Apps/index.html": {
+      "path": "Build-Apps"
     },
     "documentation/index.html": {
       "path": "documentation"
     },
+    "Documentation/index.html": {
+      "path": "Documentation"
+    },
     "build-apps/index.html": {
       "path": "build-apps"
-    },
-    "Build-Apps/index.html": {
-      "path": "Build-Apps"
     },
     "docs/allergy-intolerance/index.html": {
       "path": "docs/allergy-intolerance"
     },
-    "docs/encounter/index.html": {
-      "path": "docs/encounter"
-    },
     "docs/patient/index.html": {
       "path": "docs/patient"
+    },
+    "docs/encounter/index.html": {
+      "path": "docs/encounter"
     },
     "docs/goal/index.html": {
       "path": "docs/goal"

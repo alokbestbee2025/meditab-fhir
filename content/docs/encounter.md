@@ -6,7 +6,7 @@ toc:
   depth: 2
 ---
 
-# Patient
+# Encounter
 
 ### Description
 
