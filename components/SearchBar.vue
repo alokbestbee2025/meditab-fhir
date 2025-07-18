@@ -1,5 +1,4 @@
 <script setup>
-import { useDocSearch } from "~/composables/useDocSearch";
 
 const { query } = useDocSearch();
 </script>
