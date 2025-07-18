@@ -1,12 +1,15 @@
 export default defineNuxtConfig({
   ssr: true,
-  target: 'static', 
   nitro: {
     preset: 'vercel',
-  },
+    prerender:{
+      crawl: true,
+      routes: ['/'],
+    }
+  }as any,
   compatibilityDate: '2025-05-15',
   devtools: { 
-    enabled: true,
+    enabled: false,
    },
    
   modules: [
