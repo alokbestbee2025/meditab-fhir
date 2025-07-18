@@ -21,7 +21,6 @@
 
 .header-navbar {
   display: flex !important;
-  gap: 1rem !important;
   align-items: center !important;
   justify-content: start;
   height: 100%;

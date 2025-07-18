@@ -10,7 +10,7 @@
       <v-container fluid class="pa-0 d-flex align-center" style="height: 100%">
         <v-row align="center" style="height: 100%; width: 100%">
           <!-- Nav Icon + Drawer Toggle -->
-          <v-col cols="2" class="d-flex align-center py-0">
+          <v-col cols="3" class="d-flex align-center py-0">
             <v-app-bar-nav-icon class="d-lg-none" @click="drawer = true" />
             <NuxtLink to="/" class="d-flex align-center ml-2">
               <img src="~public/logo.png" alt="Meditab Logo" height="55" />
@@ -18,7 +18,7 @@
           </v-col>
 
           <!-- Header Navbar -->
-          <v-col cols="10" class="py-0 d-none d-lg-flex" style="height: 100%">
+          <v-col cols="9" class="py-0 d-none d-lg-flex" style="height: 100%">
             <div class="header-navbar" style="display: flex;">
               <NuxtLink exact-active-class="active-link" to="/">FHIR</NuxtLink>
               <NuxtLink
