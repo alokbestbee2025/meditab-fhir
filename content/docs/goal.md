@@ -1,5 +1,5 @@
 ---
-title: Third
+title: Goal
 description: A record of a clinical assessment of an allergy or intolerance.
 toc:
   depth: 3

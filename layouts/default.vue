@@ -19,7 +19,7 @@
 
           <!-- Header Navbar -->
           <v-col cols="10" class="py-0 d-none d-lg-flex" style="height: 100%">
-            <div class="header-navbar" style="display: flex; gap: 1rem">
+            <div class="header-navbar" style="display: flex;">
               <NuxtLink exact-active-class="active-link" to="/">FHIR</NuxtLink>
               <NuxtLink
                 exact-active-class="active-link"
@@ -27,10 +27,10 @@
                 to="/docs/allergy-intolerance"
                 >API Specification</NuxtLink
               >
-              <NuxtLink exact-active-class="active-link" to="/"
+              <NuxtLink exact-active-class="active-link" to="/build-apps"
                 >Build Apps</NuxtLink
               >
-              <NuxtLink exact-active-class="active-link" to="/"
+              <NuxtLink exact-active-class="active-link" to="/documentation"
                 >Documentation</NuxtLink
               >
             </div>
