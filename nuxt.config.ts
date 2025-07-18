@@ -1,12 +1,25 @@
+import { defineNuxtConfig } from 'nuxt/config'
+import fg from 'fast-glob'
+
+
 export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'vercel',
-    prerender:{
+    prerender: {
       crawl: true,
-      routes: ['/'],
+      routes: async () => {
+        // find all .md files in content directory
+        const files = await fg('content/**/*.md')
+        return files.map((file) =>
+          '/' + file
+            .replace(/^content/, '')
+            .replace(/\.md$/, '')
+            .replace(/index$/, '')
+        )
+      }
     }
-  },
+  }as any,
   compatibilityDate: '2025-05-15',
   devtools: { 
     enabled: false,
