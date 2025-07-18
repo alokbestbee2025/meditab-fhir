@@ -10,11 +10,11 @@
     "docs/patient/index.html": {
       "path": "docs/patient"
     },
-    "docs/goal/index.html": {
-      "path": "docs/goal"
-    },
     "docs/encounter/index.html": {
       "path": "docs/encounter"
+    },
+    "docs/goal/index.html": {
+      "path": "docs/goal"
     }
   },
   "routes": [

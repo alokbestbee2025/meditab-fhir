@@ -10,18 +10,19 @@ export default defineNuxtConfig({
     enabled: false,
   },
 
+  // This is the correct, official way to load a global stylesheet.
+  // It tells Nuxt this is a dependency that MUST be included in the build.
+  css: [
+    '@/assets/css/markdown-theme4.css',
+  ],
+
   modules: [
     '@nuxt/content',
     'vuetify-nuxt-module'
   ],
 
-  // --- START: Added Vuetify Configuration ---
-  // All your theme logic is now here, where the build process can see it.
   vuetify: {
     vuetifyOptions: {
-      icons: {
-        defaultSet: "mdi",
-      },
       theme: {
         defaultTheme: "light",
         themes: {
@@ -47,32 +48,33 @@ export default defineNuxtConfig({
       },
     }
   },
-  // --- END: Added Vuetify Configuration ---
+  
+  // This is a crucial fix for production builds.
+  // It tells Nuxt to explicitly process Vuetify to prevent build errors.
+  build: {
+    transpile: ['vuetify'],
+  },
 
-  css: [],
   app: {
     head: {
       link: [
+        // We only need the icon font here. Our custom CSS is handled above.
         {
           rel: 'stylesheet',
           href: 'https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css'
-        },
-         // THIS IS THE NEW, FULL-PROOF LINK TO YOUR THEME
-        {
-          rel: 'stylesheet',
-          href: '/css/markdown-theme4.css' // The path is relative to the public directory
         }
       ]
     }
   },
+
   content:{
     highlight:{
       theme: {
-      default: 'github-dark', // 👈 applies always, regardless of mode
-    },
-    experimental: {
-      search: true
-    }
+        default: 'github-dark',
+      },
+      experimental: {
+        search: true
+      }
     }
   } as any,
 })
