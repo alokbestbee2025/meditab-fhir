@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       crawl: true,
       routes: ['/'],
     }
-  }as any,
+  },
   compatibilityDate: '2025-05-15',
   devtools: { 
     enabled: false,
