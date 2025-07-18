@@ -50,7 +50,7 @@ export default defineNuxtConfig({
   // --- END: Added Vuetify Configuration ---
 
   css: [
-    '@/assets/css/markdown-theme4.css',
+    '~/assets/css/markdown-theme4.css',
   ],
   app: {
     head: {
