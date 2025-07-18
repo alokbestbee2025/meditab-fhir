@@ -1,4 +1,9 @@
 export default defineNuxtConfig({
+  ssr: true,
+  target: 'static', 
+  nitro: {
+    preset: 'vercel',
+  },
   compatibilityDate: '2025-05-15',
   devtools: { 
     enabled: true,
