@@ -95,21 +95,6 @@
 
           <!-- Footer Navbar -->
           <v-col cols="10" class="py-0">
-            <div
-              class="header-navbar"
-              style="display: flex; gap: 1rem; flex-wrap: wrap"
-            >
-              <NuxtLink exact-active-class="active-link" to="/faq"
-                >Frequently Asked Questions</NuxtLink
-              >
-              <NuxtLink exact-active-class="active-link">Contact</NuxtLink>
-              <NuxtLink exact-active-class="active-link" to="/"
-                >Terms of Use</NuxtLink
-              >
-              <NuxtLink exact-active-class="active-link" to="/"
-                >Privacy Policy</NuxtLink
-              >
-            </div>
           </v-col>
         </v-row>
       </v-container>
