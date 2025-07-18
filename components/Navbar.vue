@@ -17,7 +17,6 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useDocSearch } from '~/composables/useDocSearch'
 
 const { data: nav } = await useAsyncData('docs-nav', () =>
   queryCollectionNavigation('docs')
