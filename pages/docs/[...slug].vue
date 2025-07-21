@@ -18,7 +18,7 @@
           <v-col cols="12" lg="9" style="padding-bottom: 10%;" class="markdown-rendered-content">
             <ContentRenderer :value="doc.body ?? doc" />
           </v-col>
-          <v-col cols="12" lg="3">
+          <v-col cols="12" lg="3" class="toc-column-wrapper">
             <div class="right-sidebar">
               <TocContent :toc="toc" />
             </div>
@@ -80,5 +80,11 @@ console.log("I am pushing changes....");
 .markdown-content li {
   margin: 0.25rem 0 !important;
   list-style-type: decimal !important;
+}
+
+@media (max-width:1024px) {
+  .toc-column-wrapper{
+    display: none;
+  }
 }
 </style>

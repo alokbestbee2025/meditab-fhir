@@ -4,11 +4,11 @@
     "index.html": {
       "path": ""
     },
-    "Build-Apps/index.html": {
-      "path": "Build-Apps"
-    },
     "documentation/index.html": {
       "path": "documentation"
+    },
+    "Build-Apps/index.html": {
+      "path": "Build-Apps"
     },
     "Documentation/index.html": {
       "path": "Documentation"
@@ -19,11 +19,11 @@
     "docs/allergy-intolerance/index.html": {
       "path": "docs/allergy-intolerance"
     },
-    "docs/patient/index.html": {
-      "path": "docs/patient"
-    },
     "docs/encounter/index.html": {
       "path": "docs/encounter"
+    },
+    "docs/patient/index.html": {
+      "path": "docs/patient"
     },
     "docs/goal/index.html": {
       "path": "docs/goal"

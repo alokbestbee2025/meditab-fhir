@@ -1,0 +1,1 @@
+import{_ as o,g as n,w as a,o as r,b as t,a as s}from"./D4ELx69_.js";import{V as l,a as c,b as u}from"./ukLjI-TX.js";const _={};function f(d,e){return r(),n(l,null,{default:a(()=>[t(c,null,{default:a(()=>[t(u,null,{default:a(()=>e[0]||(e[0]=[s("h2",null,"Documentation Page",-1)])),_:1,__:[0]})]),_:1})]),_:1})}const V=o(_,[["render",f]]);export{V as default};

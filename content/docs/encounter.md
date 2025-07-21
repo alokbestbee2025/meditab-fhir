@@ -1,6 +1,6 @@
 ---
 title: Encounter
-description: The FHIR patient resource defines demographics and other administrative information about a person receiving care at a health organization. In order to match and deliver a patient search request, one of the following minimal data sets is required by default.
+description: The encounter resource defines the setting where patient care takes place. This includes ambulatory, inpatient, emergency, home health, and virtual encounters. Encounter is primarily used to record information about the actual activities that occurred , where appointment is used to record planned activities.
 
 toc:
   depth: 2
@@ -10,14 +10,7 @@ toc:
 
 ### Description
 
-The FHIR patient resource defines demographics and other administrative information about a person receiving care at a health organization.
-In order to match and deliver a patient search request, one of the following minimal data sets is required by default.
-
-- ID 
-- Name 
-- Identifier
-- Birth date and name
-- Gender and name
+The encounter resource defines the setting where patient care takes place. This includes ambulatory, inpatient, emergency, home health, and virtual encounters. Encounter is primarily used to record information about the actual activities that occurred , where appointment is used to record planned activities.
 
 <hr style="width: 100%; color: #f7f7f7; margin-bottom:2rem;">
 
@@ -26,7 +19,7 @@ In order to match and deliver a patient search request, one of the following min
 ### 1: Read
 ### 1.1 Request
 
-1.1.1 URL - <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Patient/85</a>
+1.1.1 URL - <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Encounter/Encounter-112-385</a>
 
 1.1.2 HTTP Method : GET
 
@@ -42,8 +35,8 @@ In order to match and deliver a patient search request, one of the following min
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://hl7.org/fhir/search.html#string" target="_blank">Resource ID (string)</a></td>
-      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">The Resource ID of the AllergyIntolerance resource.</a> </td>
+      <td>Resource ID ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">string</a> )</td>
+      <td>The FHIR ID of the <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html" target="_blank">Encounter Resource</a>.</td>
       <td>Required</td>
     </tr>
   </tbody>
@@ -53,158 +46,79 @@ In order to match and deliver a patient search request, one of the following min
 ::CodeBlock
 ```json
 {
-    "resourceType": "Patient",
-    "id": "85",
+    "resourceType": "Encounter",
+    "id": "Encounter-112-385",
     "meta": {
         "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
         ]
     },
-    "extension": [
-        {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-            "extension": [
-                {
-                    "url": "ombCategory",
-                    "valueCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.6.238",
-                        "code": "2106-3",
-                        "display": "White"
-                    }
-                },
-                {
-                    "url": "text",
-                    "valueString": "race"
-                }
-            ]
-        },
-        {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
-            "extension": [
-                {
-                    "url": "ombCategory",
-                    "valueCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.6.238",
-                        "code": "2186-5",
-                        "display": "Non - Hispanic/Latino"
-                    }
-                },
-                {
-                    "url": "text",
-                    "valueString": "ethnicity"
-                }
-            ]
-        },
-        {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
-            "valueCode": "UNK"
-        }
-    ],
     "identifier": [
         {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "SS"
-                    }
-                ]
-            },
-            "system": "http://hl7.org/fhir/sid/us-ssn",
-            "value": "946481516"
+            "system": "https://onchit-fhir.meditab.com/Encounter/Identifier",
+            "value": "Encounter-112-385"
         }
     ],
-    "active": true,
-    "name": [
-        {
-            "text": "Tejas",
-            "family": "Test5",
-            "given": [
-                "Tejas",
-                "G"
-            ],
-            "suffix": [
-                "Jr"
-            ]
-        },
-        {
-            "text": "Tejas",
-            "family": "Test1",
-            "given": [
-                "Tejas",
-                "G"
-            ],
-            "period": {
-                "start": "2022-11-09T05:00:18+00:00",
-                "end": "2022-11-09T05:26:42+00:00"
-            }
-        },
-        {
-            "text": "Tejas",
-            "family": "Test3",
-            "given": [
-                "Tejas",
-                "G"
-            ],
-            "period": {
-                "start": "2022-11-09T05:26:42+00:00"
-            }
-        }
-    ],
-    "telecom": [
-        {
-            "system": "phone",
-            "value": "(555)-723-1544",
-            "use": "home"
-        },
-        {
-            "system": "phone",
-            "value": "(555)-777-1234",
-            "use": "mobile"
-        }
-    ],
-    "gender": "male",
-    "birthDate": "2013-07-31",
-    "address": [
-        {
-            "line": [
-                "1357, Amber Dr, Beaverton"
-            ],
-            "city": "Beaverton",
-            "state": "OR",
-            "postalCode": "3"
-        },
-        {
-            "line": [
-                "1357, Amber Dr, Beaverton"
-            ],
-            "city": "Beaverton",
-            "state": "OR",
-            "postalCode": "3",
-            "period": {
-                "start": "2022-11-09T05:00:18+00:00"
-            }
-        }
-    ],
-    "maritalStatus": {
-        "coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
-                "code": "M",
-                "display": "Married"
-            }
-        ]
+    "status": "finished",
+    "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
     },
-    "communication": [
+    "type": [
         {
-            "language": {
-                "coding": [
-                    {
-                        "system": "urn:ietf:bcp:47",
-                        "code": "eng",
-                        "display": "English"
-                    }
-                ]
+            "text": "Office Visit"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/85"
+    },
+    "participant": [
+        {
+            "type": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                            "code": "PPRF",
+                            "display": "primary performer"
+                        }
+                    ]
+                }
+            ],
+            "period": {
+                "start": "2015-06-22T04:55:00+00:00",
+                "end": "2015-07-22T00:00:00+00:00"
+            },
+            "individual": {
+                "reference": "Practitioner/Practitioner-2"
+            }
+        }
+    ],
+    "period": {
+        "start": "2015-06-22T04:55:00+00:00",
+        "end": "2015-06-22T05:25:00+00:00"
+    },
+    "reasonCode": [
+        {
+            "text": "Nebulizer Therapy"
+        }
+    ],
+    "hospitalization": {
+        "dischargeDisposition": {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                    "code": "oth",
+                    "display": "Other"
+                }
+            ]
+        }
+    },
+    "location": [
+        {
+            "location": {
+                "reference": "Location/Location-1"
             }
         }
     ]
@@ -223,14 +137,14 @@ In order to match and deliver a patient search request, one of the following min
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntolerance </a></td>
-      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">A single AllergyIntolerance resource.</a> </td>
+      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-patient.html" target="_blank">Encounter</a></td>
+      <td>A single <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html" target="_blank">encounter resource</a>.</td>
       <td>Required</td>
     </tr>
   </tbody>
 </table>
 
-#### Allergy Intolerance Resource Content:
+#### Encounter Resource Content:
 
 <table>
   <thead>
@@ -242,40 +156,53 @@ In order to match and deliver a patient search request, one of the following min
   </thead>
   <tbody>
     <tr>
-      <td>clinicalStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>
-        <p>The current status of the allergy. Possible values include:</p>
-        <ul>
-          <li>active</li>
-          <li>resolved</li>
-          <li>inactive</li>
-        </ul>
-      </td>
+      <td>Id ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">string</a> )</td>
+      <td>The encounter type.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>Id ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">String</a> )</td>
-      <td>The AllergyIntolerance FHIR ID.</td>
+      <td>status( <a href="https://hl7.org/fhir/R4/datatypes.html#code" target="_blank">code</a> )</td>
+      <td>If the encounter is finished or not.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>verificationStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>If the allergy is on the patient's chart, this element specifies "confirmed". If it is a newly created allergy and still needs to be reconciled, it is "unconfirmed".</td>
+      <td>class ( <a href="https://hl7.org/fhir/R4/datatypes.html#Coding" target="_blank">Coding</a> )</td>
+      <td>Classification of patient encounters.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>code ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>The allergen name and codes.</td>
+      <td>type</td>
+      <td>Date (MM-DD-YYYY) of the patient.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>patient ( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
-      <td>Reference to a patient resource for whom the allergy is relevant.</td>
+      <td>participant ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>List of participants involved in the encounter.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>reaction( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>Reaction name</td>
+      <td>period ( <a href="https://hl7.org/fhir/R4/datatypes.html#Period" target="_blank">Period</a> )</td>
+      <td>Period of time during the encounter that the participant participated.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>reasonCode ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
+      <td>The reason for the visit.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>hospitalization ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Details about the admission to a healthcare service.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>location ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Location reference id. Can return a department, location, hospital room, or bed. Department and location are determined dynamically depending on a variety of factors.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>subject( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
+      <td>Reference to the Patient resource who was the subject of the encounter.</td>
       <td>Required</td>
     </tr>
   </tbody>
@@ -322,7 +249,7 @@ In order to match and deliver a patient search request, one of the following min
 ### 2: Search
 ### 2.1 Request
 
-2.1.1 URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-4822">/mps/fhir/R4/AllergyIntolerance?patient=85</a>
+2.1.1 URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Encounter?_id=Encounter-112-385</a>
 
 2.1.2 HTTP Method: GET
 
@@ -332,7 +259,7 @@ In order to match and deliver a patient search request, one of the following min
 <table>
   <thead>
     <tr>
-      <th>Response Code</th>
+      <th>Name</th>
       <th>Description</th>
       <th>Required/Optional</th>
     </tr>
@@ -340,86 +267,117 @@ In order to match and deliver a patient search request, one of the following min
   <tbody>
     <tr>
       <td>Resource ID ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">string</a> )</td>
-      <td>The Resource ID of the <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntolerance resource</a>.</td>
+      <td>The FHIR ID of the <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html" target="_blank">Encounter Resource</a>.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>Patient ID( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
-      <td>The server could not understand the request due to invalid syntax. The body of the HTTP response will contain an <a href="https://hl7.org/fhir/R4B/operationoutcome.html" target="_blank">OperationOutcome</a> resource that indicates the invalid request could not be processed.</td>
-      <td>The Resource ID of the <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntolerance resource</a>.</td>
+      <td>patient ( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
+      <td>Reference to a <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-patient.html" target="_blank">patient resource</a>.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>date ( <a href="https://hl7.org/fhir/search.html#date" target="_blank">date</a> )</td>
+      <td>A date range that the encounter takes place.</td>
+      <td>Required</td>
     </tr>
   </tbody>
 </table>
 
+
 ### 2.2. Response
 ::CodeBlock
 ```json
-﻿{
+{
     "resourceType": "Bundle",
-    "id": "e7891e28-22a5-48ef-8e1d-d3100e85aa37",
+    "id": "8364cc12-a082-49f2-917c-25009d3b0567",
     "meta": {
-        "lastUpdated": "2022-11-18T14:25:53.528+00:00"
+        "lastUpdated": "2022-11-18T14:57:10.722+00:00"
     },
     "type": "searchset",
     "total": 1,
     "link": [
         {
             "relation": "self",
-            "url": "https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance?_id=AllergyIntolerance-85-18"
+            "url": "https://172.26.60.114:2525/mps/fhir/R4/Encounter?_id=Encounter-112-385"
         }
     ],
     "entry": [
         {
             "resource": {
-                "resourceType": "AllergyIntolerance",
-                "id": "AllergyIntolerance-85-18",
+                "resourceType": "Encounter",
+                "id": "Encounter-112-385",
                 "meta": {
                     "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"
+                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
                     ]
                 },
-                "clinicalStatus": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                            "code": "active",
-                            "display": "Active"
-                        }
-                    ]
+                "identifier": [
+                    {
+                        "system": "https://onchit-fhir.meditab.com/Encounter/Identifier",
+                        "value": "Encounter-112-385"
+                    }
+                ],
+                "status": "finished",
+                "class": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "AMB",
+                    "display": "ambulatory"
                 },
-                "verificationStatus": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
-                            "code": "confirmed"
-                        }
-                    ]
-                },
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                            "code": "1292899",
-                            "display": "penicillin G"
-                        }
-                    ]
-                },
-                "patient": {
+                "type": [
+                    {
+                        "text": "Office Visit"
+                    }
+                ],
+                "subject": {
                     "reference": "Patient/85"
                 },
-                "reaction": [
+                "participant": [
                     {
-                        "manifestation": [
+                        "type": [
                             {
                                 "coding": [
                                     {
-                                        "system": "http://snomed.info/sct",
-                                        "code": "315256004",
-                                        "display": "Itching of pigmented skin lesion (disorder)"
+                                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                                        "code": "PPRF",
+                                        "display": "primary performer"
                                     }
                                 ]
                             }
+                        ],
+                        "period": {
+                            "start": "2015-06-22T04:55:00+00:00",
+                            "end": "2015-07-22T00:00:00+00:00"
+                        },
+                        "individual": {
+                            "reference": "Practitioner/Practitioner-2"
+                        }
+                    }
+                ],
+                "period": {
+                    "start": "2015-06-22T04:55:00+00:00",
+                    "end": "2015-06-22T05:25:00+00:00"
+                },
+                "reasonCode": [
+                    {
+                        "text": "Nebulizer Therapy"
+                    }
+                ],
+                "hospitalization": {
+                    "dischargeDisposition": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                                "code": "oth",
+                                "display": "Other"
+                            }
                         ]
+                    }
+                },
+                "location": [
+                    {
+                        "location": {
+                            "reference": "Location/Location-1"
+                        }
                     }
                 ]
             },
@@ -452,14 +410,14 @@ In order to match and deliver a patient search request, one of the following min
       <td>Required</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntolerance</a></td>
-      <td>A single <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntollerance</a> resource.</td>
+      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">Encounter</a></td>
+      <td>A single <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-encounter.html" target="_blank">encounter resource</a>.</td>
       <td>Required</td>
     </tr>
   </tbody>
 </table>
 
-#### Allergy Intolerance Resource Content:
+#### Encounter Resource Content:
 
 <table>
   <thead>
@@ -471,40 +429,53 @@ In order to match and deliver a patient search request, one of the following min
   </thead>
   <tbody>
     <tr>
-      <td>clinicalStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>
-        <p>The current status of the allergy. Possible values include:</p>
-        <ul>
-          <li>active</li>
-          <li>resolved</li>
-          <li>inactive</li>
-        </ul>
-      </td>
-      <td>Required</td>
-    </tr>
-    <tr>
       <td>Id ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">string</a> )</td>
-      <td>The AllergyIntolerance FHIR ID.</td>
+      <td>The Patient resource FHIR ID.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>verificationStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>If the allergy is on the patient's chart, this element specifies "confirmed". If it is a newly created allergy and still needs to be reconciled, it is "unconfirmed".</td>
+      <td>status( <a href="https://hl7.org/fhir/R4/datatypes.html#code" target="_blank">code</a> )</td>
+      <td>If the encounter is finished or not.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>code ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>The allergen name and codes.</td>
+      <td>class ( <a href="https://hl7.org/fhir/R4/datatypes.html#Coding" target="_blank">Coding</a> )</td>
+      <td>Classification of patient encounters.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>patient( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
-      <td>Reference to a patient resource for whom the allergy is relevant.</td>
+      <td>type( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
+      <td>The encounter type.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>reaction( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>Reaction name</td>
+      <td>participant ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>List of participants involved in the encounter.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>period ( <a href="https://hl7.org/fhir/R4/datatypes.html#Period" target="_blank">Period</a> )</td>
+      <td>Period of time during the encounter that the participant participated.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>reasonCode ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
+      <td>The reason for the visit.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>hospitalization ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Details about the admission to a healthcare service.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>location ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Location reference id. Can return a department, location, hospital room, or bed. Department and location are determined dynamically depending on a variety of factors.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>subject( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
+      <td>Reference to the Patient resource who was the subject of the encounter.</td>
       <td>Required</td>
     </tr>
     <tr>

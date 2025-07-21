@@ -253,7 +253,7 @@ In order to match and deliver a patient search request, one of the following min
     </tr>
     <tr>
       <td>address( <a href="https://hl7.org/fhir/R4/datatypes.html#Address" target="_blank">Address</a> )</td>
-      <td>If the allergy is on the patient's chart, this element specifies "confirmed". If it is a newly created allergy and still needs to be reconciled, it is "unconfirmed".</td>
+      <td>The address of the patient.</td>
       <td>Required</td>
     </tr>
     <tr>
@@ -599,14 +599,14 @@ In order to match and deliver a patient search request, one of the following min
       <td>Required</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntolerance</a></td>
-      <td>A single <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">AllergyIntollerance</a> resource.</td>
+      <td><a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-allergyintolerance.html" target="_blank">Patient</a></td>
+      <td>A single <a href="https://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-patient.html" target="_blank">Patient resource</a>.</td>
       <td>Required</td>
     </tr>
   </tbody>
 </table>
 
-#### Allergy Intolerance Resource Content:
+#### Patient Resource Content:
 
 <table>
   <thead>
@@ -618,40 +618,68 @@ In order to match and deliver a patient search request, one of the following min
   </thead>
   <tbody>
     <tr>
-      <td>clinicalStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>
-        <p>The current status of the allergy. Possible values include:</p>
-        <ul>
-          <li>active</li>
-          <li>resolved</li>
-          <li>inactive</li>
-        </ul>
-      </td>
-      <td>Required</td>
-    </tr>
-    <tr>
       <td>Id ( <a href="https://hl7.org/fhir/search.html#string" target="_blank">string</a> )</td>
-      <td>The AllergyIntolerance FHIR ID.</td>
+      <td>The Patient resource FHIR ID.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>verificationStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>If the allergy is on the patient's chart, this element specifies "confirmed". If it is a newly created allergy and still needs to be reconciled, it is "unconfirmed".</td>
+      <td>active ( <a href="https://www.hl7.org/fhir/datatypes.html" target="_blank">Boolean</a> )</td>
+      <td>If the patient record is active or inactive. (True & False)</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>code ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
-      <td>The allergen name and codes.</td>
+      <td>address ( <a href="https://hl7.org/fhir/R4/datatypes.html#Address" target="_blank">Address</a> )</td>
+      <td>The address of the patient.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>patient( <a href="https://hl7.org/fhir/search.html#reference" target="_blank">reference</a> )</td>
-      <td>Reference to a patient resource for whom the allergy is relevant.</td>
+      <td>birthDate ( <a href="https://hl7.org/fhir/search.html#date" target="_blank">date</a> )</td>
+      <td>Date (MM-DD-YYYY) of the patient.</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td>reaction( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
+      <td>Communication ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Patient Contact details.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>contact ( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
       <td>Reaction name</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>gender ( <a href="https://hl7.org/fhir/R4/datatypes.html#code" target="_blank">code</a> )</td>
+      <td>Patient legal Sex.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>race ( <a href="https://hl7.org/fhir/us/core/STU3.1/StructureDefinition-us-core-patient-definitions.html#Patient.extension:race" target="_blank">Extension</a> )</td>
+      <td>Patient Race.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>telecom ( <a href="https://hl7.org/fhir/R4/datatypes.html#ContactPoint" target="_blank">ContactPoint</a> )</td>
+      <td>Patient telecom details.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>ethnicity( <a href="https://hl7.org/fhir/us/core/STU3.1/StructureDefinition-us-core-patient-definitions.html#Patient.extension:ethnicity" target="_blank">Extension</a> )</td>
+      <td>Patient Ethnicity.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>Language( <a href="https://hl7.org/fhir/R4/datatypes.html#BackboneElement" target="_blank">BackboneElement</a> )</td>
+      <td>Patient Language.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>maritalStatus ( <a href="https://hl7.org/fhir/datatypes.html#codeableconcept" target="_blank">CodeableConcept</a> )</td>
+      <td>Patient Marital Status.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>name ( <a href="https://hl7.org/fhir/R4/datatypes.html#HumanName">HumanName</a> )</td>
+      <td>The patient's family (last), Given (First & Middle) name, Prefix or Suffix in a codeable concept or string.</td>
       <td>Required</td>
     </tr>
     <tr>
@@ -679,7 +707,7 @@ In order to match and deliver a patient search request, one of the following min
   <tbody>
     <tr>
       <td>200 OK</td>
-      <td>The requested resource was found and is contained within the body of  the HTTP response.</td>
+      <td>The requested resource was found and is contained within the body of the HTTP response.</td>
     </tr>
     <tr>
       <td>400 Bad Request</td>

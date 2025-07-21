@@ -241,9 +241,13 @@ body,
 @media (max-width: 768px) {
   table {
     display: block;
-    overflow-x: auto;
+    overflow-x: auto !important;
+    max-width: 100%;
     white-space: nowrap;
   }
+  table::-webkit-scrollbar {
+  height: 4px !important;     
+}
 }
 
 /* Code Block */
