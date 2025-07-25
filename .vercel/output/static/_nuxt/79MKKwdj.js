@@ -1,1 +1,0 @@
-import{_ as o,g as n,w as a,o as r,b as t,a as s}from"./uQ56CW8K.js";import{V as l,a as _,b as c}from"./5blY1rzZ.js";const f={};function u(d,e){return r(),n(l,null,{default:a(()=>[t(_,null,{default:a(()=>[t(c,null,{default:a(()=>e[0]||(e[0]=[s("h2",null,"Main Page",-1)])),_:1,__:[0]})]),_:1})]),_:1})}const m=o(f,[["render",u]]);export{m as default};
