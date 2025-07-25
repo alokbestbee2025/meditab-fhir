@@ -4,9 +4,6 @@
     "index.html": {
       "path": ""
     },
-    "documentation/index.html": {
-      "path": "documentation"
-    },
     "Build-Apps/index.html": {
       "path": "Build-Apps"
     },
@@ -16,17 +13,11 @@
     "build-apps/index.html": {
       "path": "build-apps"
     },
+    "documentation/index.html": {
+      "path": "documentation"
+    },
     "docs/allergy-intolerance/index.html": {
       "path": "docs/allergy-intolerance"
-    },
-    "docs/encounter/index.html": {
-      "path": "docs/encounter"
-    },
-    "docs/patient/index.html": {
-      "path": "docs/patient"
-    },
-    "docs/goal/index.html": {
-      "path": "docs/goal"
     }
   },
   "routes": [
