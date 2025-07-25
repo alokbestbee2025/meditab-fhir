@@ -24,7 +24,7 @@
               <NuxtLink
                 exact-active-class="active-link"
                 :class="docslink"
-                to="/docs/allergy-intolerance"
+                to="/docs/allergy-intolerance/search"
                 >API Specification</NuxtLink
               >
               <NuxtLink exact-active-class="active-link" to="/build-apps"

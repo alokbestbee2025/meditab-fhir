@@ -1,5 +1,5 @@
 ---
-title: Patient
+title: Read
 description: The FHIR patient resource defines demographics and other administrative information about a person receiving care at a health organization. In order to match and deliver a patient search request, one of the following minimal data sets is required by default.
 
 toc:
