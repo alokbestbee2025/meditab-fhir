@@ -17,14 +17,14 @@ This profile is used to define the content returned by the API Server in respons
 
 #### Interaction:
 
-### 2: Search
-### 2.1 Request
+### Search
+### Request
 
-2.1.1 URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-4822">/mps/fhir/R4/AllergyIntolerance?patient=85</a>
+URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-4822">/mps/fhir/R4/AllergyIntolerance?patient=85</a>
 
-2.1.2 HTTP Method: GET
+HTTP Method: GET
 
-2.1.3 Parameter
+Parameter
 
 
 <table>
@@ -49,10 +49,10 @@ This profile is used to define the content returned by the API Server in respons
   </tbody>
 </table>
 
-### 2.2. Response
+### Response
 ::CodeBlock
 ```json
-﻿{
+{
     "resourceType": "Bundle",
     "id": "e7891e28-22a5-48ef-8e1d-d3100e85aa37",
     "meta": {

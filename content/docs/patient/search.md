@@ -23,14 +23,14 @@ In order to match and deliver a patient search request, one of the following min
 
 #### Interaction:
 
-### 2: Search
-### 2.1 Request
+### Search
+### Request
 
-2.1.1 URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Patient?_id=85</a>
+URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Patient?_id=85</a>
 
-2.1.2 HTTP Method: GET
+HTTP Method: GET
 
-2.1.3 Parameter
+Parameter
 
 
 <table>
@@ -70,7 +70,7 @@ In order to match and deliver a patient search request, one of the following min
   </tbody>
 </table>
 
-### 2.2. Response
+### Response
 ::CodeBlock
 ```json
 {

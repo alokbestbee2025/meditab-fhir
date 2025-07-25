@@ -17,14 +17,14 @@ This profile is used to define the content returned by the API Server in respons
 
 #### Interaction:
 
-### 1: Read
-### 1.1 Request
+### Read
+### Request
 
-1.1.1 URL - <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482</a>
+URL - <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482</a>
 
-1.1.2 HTTP Method : GET
+HTTP Method : GET
 
-1.1.3 Parameter
+Parameter
 
 <table>
   <thead>
@@ -43,7 +43,7 @@ This profile is used to define the content returned by the API Server in respons
   </tbody>
 </table>
 
-### 1.2. Response
+### Response
 ::CodeBlock
 ```json
 {

@@ -16,14 +16,14 @@ The encounter resource defines the setting where patient care takes place. This 
 
 #### Interaction:
 
-### 2: Search
-### 2.1 Request
+### Search
+### Request
 
-2.1.1 URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Encounter?_id=Encounter-112-385</a>
+URL – <a href="https://172.26.60.114:2525/mps/fhir/R4/AllergyIntolerance/AllergyIntolerance-482">/mps/fhir/R4/Encounter?_id=Encounter-112-385</a>
 
-2.1.2 HTTP Method: GET
+HTTP Method: GET
 
-2.1.3 Parameter
+Parameter
 
 
 <table>
@@ -54,7 +54,7 @@ The encounter resource defines the setting where patient care takes place. This 
 </table>
 
 
-### 2.2. Response
+### Response
 ::CodeBlock
 ```json
 {
