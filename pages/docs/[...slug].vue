@@ -35,17 +35,18 @@
 
 <script setup>
 const route = useRoute();
-const slug = route.params.slug;
+const slugArray = route.params.slug || [];
+const slug = Array.isArray(slugArray) ? slugArray.join('/') : slugArray;
+
 
 const { data: doc } = await useAsyncData(`doc-${slug}`, () =>
   queryCollection("docs").path(`/docs/${slug}`).first()
 );
-
 const toc = computed(() => doc.value?.body?.toc?.links || []);
 import TocContent from "~/components/UI/TocContent.vue";
 import Navbar from "~/components/Navbar.vue";
 import SearchBar from "~/components/SearchBar.vue";
-console.log("I am pushing changes....");
+
 </script>
 
 
