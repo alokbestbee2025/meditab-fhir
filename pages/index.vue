@@ -157,7 +157,7 @@
         <v-row style="margin-bottom: 2rem; max-width: 800px;">
           <v-col lg="7" sm="12" class="d-flex justify-center align-center">
             <NuxtImg src="/Home/Secure by Design.png" width="auto" height="100%" alt="why Meditab"
-              format="webp" class="rounded-lg" />
+              format="webp" class="rounded-lg column-img-util" />
           </v-col>
           <v-col lg="5" sm="12" class="d-flex flex-column justify-center align-start">
             <ul>

@@ -7,14 +7,14 @@
     "documentation/index.html": {
       "path": "documentation"
     },
-    "Build-Apps/index.html": {
-      "path": "Build-Apps"
+    "build-apps/index.html": {
+      "path": "build-apps"
     },
     "Documentation/index.html": {
       "path": "Documentation"
     },
-    "build-apps/index.html": {
-      "path": "build-apps"
+    "Build-Apps/index.html": {
+      "path": "Build-Apps"
     },
     "docs/allergy-intolerance/search/index.html": {
       "path": "docs/allergy-intolerance/search"

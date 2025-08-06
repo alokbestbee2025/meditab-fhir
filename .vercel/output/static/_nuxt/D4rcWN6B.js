@@ -1,0 +1,1 @@
+import{_ as o,m as s,w as a,o as l,b as t,a as r}from"./C_n3yY33.js";import{V as n,a as u,b as _}from"./Cv44nHmW.js";const c={};function d(f,e){return l(),s(n,null,{default:a(()=>[t(u,null,{default:a(()=>[t(_,null,{default:a(()=>e[0]||(e[0]=[r("h2",null,"Build Apps",-1)])),_:1,__:[0]})]),_:1})]),_:1})}const m=o(c,[["render",d]]);export{m as default};
