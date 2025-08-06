@@ -29,7 +29,7 @@
         </v-row>
         <v-row style="margin-bottom: 2rem">
           <v-col cols="12" lg="6" sm="12" class="d-flex justify-center align-center">
-            <NuxtImg src="/Home/Powered by AI We’re Ready..png" alt="why Meditab"
+            <NuxtImg src="/Home/[Meditab  FHIR Layout Design-08 (1).jpg" alt="why Meditab"
               format="webp" class="rounded-lg column-img-util" />
           </v-col>
           <v-col cols="12" lg="6" sm="12" class="d-flex flex-column justify-start align-start">
@@ -145,7 +145,7 @@
 
     <!-- Secure by Design Section -->
     <section class="why-meditab-fhir padding-custom-util">
-      <v-container max-width="1100px">
+      <v-container max-width="1100px" class="d-flex flex-column justify-center align-center">
         <v-row class="d-flex justify-center align-center" style="margin-bottom: 2rem">
           <v-col lg="10" sm="12">
             <h2 class="text-center heading">
@@ -154,12 +154,12 @@
             <p class="text-center">{{ home.sections.secureDesign.content }}</p>
           </v-col>
         </v-row>
-        <v-row style="margin-bottom: 2rem; max-width: 800px;">
-          <v-col lg="7" sm="12" class="d-flex justify-center align-center">
+        <v-row class="d-flex justify-center align-center" style="margin-bottom: 2rem; max-width: 800px;">
+          <v-col lg="7" sm="12" cols="12" class="d-flex justify-center align-center">
             <NuxtImg src="/Home/Secure by Design.png" width="auto" height="100%" alt="why Meditab"
               format="webp" class="rounded-lg column-img-util" />
           </v-col>
-          <v-col lg="5" sm="12" class="d-flex flex-column justify-center align-start">
+          <v-col lg="5" sm="12" cols="12" class="d-flex flex-column justify-center align-start">
             <ul>
               <li class="mb-4" v-for="(item, index) in home.sections.secureDesign.secureDesignItems" :key="index">{{
                 item.subPara }}</li>
@@ -167,7 +167,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </section>
+    </section> 
 
 
     <!-- What's Next Section -->
