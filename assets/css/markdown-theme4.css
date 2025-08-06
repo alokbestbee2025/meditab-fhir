@@ -20,7 +20,19 @@ body{
   background-repeat: no-repeat !important;
   padding: 0 20px;
 }
-
+.mobile-subdrops.v-list-group--open .v-list-group__items{
+  height: 400px;
+  overflow-y: auto;
+  padding:0 10px;
+  margin: 15px 0;
+}
+.mobile-subdrops .deepest-child .v-list-group__items{
+  height: auto !important;
+}
+.mobile-subdrops .deepest-child .v-list-group__items a{
+  background-color: transparent !important;
+  font-weight: bold !important;
+}
 .header-navbar {
   display: flex !important;
   align-items: center !important;

@@ -1,0 +1,66 @@
+/* Utility Used */
+.padding-custom-util{
+  padding: 4%;
+}
+.flex-responsive{
+  display: flex;
+
+}
+.main-page-content .heading{
+  color: rgb(var(--v-theme-heading)) !important;
+  font-weight: bold !important;
+}
+.main-page-content ul {
+    padding-inline-start: 40px;
+}
+.comman-bg-img-props{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.column-img-util{
+  width: auto;
+  height: auto;
+}
+/* Utility Used */
+
+.home-banner-section{
+  min-height: 24rem;
+  background-image: url('/public/Home/Banner.png');
+}
+
+.info-section{
+  background-image: url('/public/Home/01-02.png');
+  color: rgb(var(--v-theme-headerItem));
+}
+
+
+.what-can-you-do{
+  background-color: #f7fafc;
+}
+.what-can-you-do .box{
+  border-right: 2px solid rgb(var(--v-theme-tborder));
+  padding: 1% 3%;
+}
+
+.supported-fhir-resources{
+  background-color: #f7fafc;
+}
+
+
+
+@media (max-width:767px) {
+  .what-can-you-do .box{
+  border-right: none;
+  padding: 0%;
+  padding-bottom: 25px;
+  border-bottom: 2px solid rgb(var(--v-theme-tborder));
+  margin-top: 25px;
+}
+
+.column-img-util{
+  width: 100%;
+  height: auto;
+}
+}

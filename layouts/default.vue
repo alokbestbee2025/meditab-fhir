@@ -11,7 +11,7 @@
         <v-row align="center" style="height: 100%; width: 100%">
           <!-- Nav Icon + Drawer Toggle -->
           <v-col cols="3" class="d-flex align-center py-0">
-            <v-app-bar-nav-icon class="d-lg-none" @click="drawer = true" />
+            <v-app-bar-nav-icon class="d-lg-none" @click="drawer = true" style="color: white;"/>
             <NuxtLink to="/" class="d-flex align-center ml-2">
               <img src="~public/logo.png" alt="Meditab Logo" height="55" />
             </NuxtLink>
@@ -40,38 +40,62 @@
     </v-app-bar>
 
     <!-- Drawer for Mobile/Tablet -->
-    <v-navigation-drawer v-model="drawer" temporary class="d-lg-none" app>
+    <v-navigation-drawer v-model="drawer" temporary class="d-lg-none" app style="position: fixed;">
       <v-list dense nav>
         <!-- 1. Static Link -->
         <v-list-item to="/" link @click="drawer = false">
           <v-list-item-title>FHIR</v-list-item-title>
         </v-list-item>
 
-        <!-- 2. Collapsible API Specification -->
-        <v-list-group value="true" v-model="apiGroupOpen">
+        <!-- 2. Collapsible API Specification with Nested Items -->
+        <v-list-group value="true" v-model="apiGroupOpen" class="mobile-subdrops">
           <template #activator="{ props }">
             <v-list-item v-bind="props">
               <v-list-item-title>API Specification</v-list-item-title>
             </v-list-item>
           </template>
 
-          <!-- Render the dynamic items here -->
-          <v-list-item
-            v-for="item in navItems"
-            :key="item.path"
-            :to="item.path"
-            link
-            @click="drawer = false"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
+          <!-- Render the dynamic items with nested structure -->
+          <template v-for="item in navItems" :key="item.path">
+            <!-- If item has children, create another nested group -->
+            <v-list-group v-if="item.children && item.children.length > 0" :value="item.title"  class="deepest-child">
+              <template #activator="{ props }">
+                <v-list-item v-bind="props" class="pl-8">
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item>
+              </template>
+              
+              <!-- Render children of this item -->
+              <v-list-item
+                v-for="child in item.children"
+                :key="child.path"
+                :to="child.path"
+                link
+                @click="drawer = false"
+                class="pl-6"
+              >
+                <v-list-item-title>{{ child.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list-group>
+
+            <!-- If item has no children, render as regular item -->
+            <v-list-item
+              v-else
+              :to="item.path"
+              link
+              @click="drawer = false"
+              class="pl-8"
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </template>
         </v-list-group>
 
         <!-- 3. Other Static Links -->
-        <v-list-item to="/" link @click="drawer = false">
+        <v-list-item to="/build-apps" link @click="drawer = false">
           <v-list-item-title>Build Apps</v-list-item-title>
         </v-list-item>
-        <v-list-item to="/" link @click="drawer = false">
+        <v-list-item to="/documentation" link @click="drawer = false">
           <v-list-item-title>Documentation</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -105,23 +129,30 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
-
+const openGroup = ref(null);
 
 const apiGroupOpen = ref(false)
-
 const drawer = ref(false);
 const route = useRoute();
+
 const docslink = computed(() => {
   if(route.path.startsWith("/docs")){
     return "active-link";
   }
 });
 
-// 🎯 Fetch the navigation tree, same as in Navbar.vue:
 const { data: nav } = await useAsyncData(
   "docs-nav-mobile",
   () => queryCollectionNavigation("docs"),
   { server: false }
 );
+
 const navItems = computed(() => nav.value?.[0]?.children || []);
 </script>
+
+
+<style scoped>
+.v-list-item{
+  background-color: rgb(var(--v-theme-navItem)) !important;
+}
+</style>

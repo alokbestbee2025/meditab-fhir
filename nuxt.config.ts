@@ -14,11 +14,13 @@ export default defineNuxtConfig({
   // It tells Nuxt this is a dependency that MUST be included in the build.
   css: [
     '@/assets/css/markdown-theme4.css',
+    '@/assets/css/mainPages.css',
   ],
 
   modules: [
     '@nuxt/content',
-    'vuetify-nuxt-module'
+    'vuetify-nuxt-module',
+    '@nuxt/image'
   ],
 
   vuetify: {
