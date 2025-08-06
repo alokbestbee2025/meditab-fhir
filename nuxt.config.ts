@@ -9,6 +9,12 @@ export default defineNuxtConfig({
     routes: ['/']
   }
   },
+  hooks: {
+    async 'prerender:routes'(ctx) {
+      const docs = await queryCollection('docs').fetch();
+      docs.forEach(item => ctx.routes.add(item._path));
+    }
+  },
   compatibilityDate: '2025-05-15',
   devtools: {
     enabled: false,
