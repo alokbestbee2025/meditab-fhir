@@ -4,20 +4,23 @@
     "index.html": {
       "path": ""
     },
-    "Build-Apps/index.html": {
-      "path": "Build-Apps"
-    },
-    "documentation/index.html": {
-      "path": "documentation"
-    },
     "build-apps/index.html": {
       "path": "build-apps"
+    },
+    "Build-Apps/index.html": {
+      "path": "Build-Apps"
     },
     "Documentation/index.html": {
       "path": "Documentation"
     },
+    "documentation/index.html": {
+      "path": "documentation"
+    },
     "docs/allergy-intolerance/search/index.html": {
       "path": "docs/allergy-intolerance/search"
+    },
+    "docs/allergy-intolerance/read/index.html": {
+      "path": "docs/allergy-intolerance/read"
     }
   },
   "routes": [
