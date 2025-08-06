@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'vercel',
+    prerender: {
+      routes: [
+        '/docs/allergy-intolerance/search',
+        '/docs/allergy-intolerance/read', // add more routes here
+      ]
+    }
   },
   compatibilityDate: '2025-05-15',
   devtools: {
