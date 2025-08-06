@@ -52,7 +52,7 @@
               <v-row>
                 <v-col cols="12" lg="4" sm="12">
                   <NuxtImg :src="item.iconLink" width="auto" format="webp"
-                    class="rounded-lg" />
+                    class="rounded-lg icon-img-util" />
                 </v-col>
                 <v-col cols="12" lg="8" sm="12">
                   <h4 class="heading">{{ item.subHeading }}</h4>
@@ -126,14 +126,14 @@
         <v-row class="d-flex justify-center align-center" style="margin-bottom: 2rem">
           <v-col cols="6" lg="3" sm="6" class="d-flex flex-column justify-center align-center" v-for="(item, index) in home.sections.supportedFhir.supportedFhirItems.row1" :key="index">
             <NuxtImg :src="item.iconLink" width="auto" height="100%" alt="Icons"
-              format="webp" class="rounded-lg mb-3" />
+              format="webp" class="rounded-lg mb-3 icon-img-util" />
             <p class="heading">{{ item.subHeading }}</p>
           </v-col>
         </v-row>
         <v-row class="d-flex justify-center align-center" style="margin-bottom: 4rem">
           <v-col cols="6" lg="3" sm="6" class="d-flex flex-column justify-center align-center" v-for="(item, index) in home.sections.supportedFhir.supportedFhirItems.row2" :key="index">
             <NuxtImg :src="item.iconLink" width="auto" height="100%" alt="Icons"
-              format="webp" class="rounded-lg mb-3" />
+              format="webp" class="rounded-lg mb-3 icon-img-util" />
             <p class="heading">{{ item.subHeading }}</p>
           </v-col>
         </v-row>

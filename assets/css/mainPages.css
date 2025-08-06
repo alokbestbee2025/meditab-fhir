@@ -20,8 +20,14 @@
 }
 
 .column-img-util{
-  width: auto;
+  width: 100% !important;
   height: auto;
+  max-width: 450px !important;
+}
+.icon-img-util{
+  width: 100% !important;
+  height: auto;
+  max-width: 110px !important;
 }
 /* Utility Used */
 
