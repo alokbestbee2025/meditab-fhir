@@ -2,7 +2,9 @@
   <!-- Flat items: Top-level .md files -->
   <v-list density="compact" nav class="pa-0 mt-4">
     <v-list-item
-      v-for="item in filteredNav.filter(i => !i.children || i.children.length === 0)"
+      v-for="item in filteredNav.filter(
+        (i) => !i.children || i.children.length === 0
+      )"
       :key="item.path"
       :to="item.path"
       link
@@ -10,7 +12,7 @@
       class="fhir-navbar-item"
     >
       <v-list-item-title>
-        {{ item.title?.toUpperCase() || '(UNTITLED)' }}
+        {{ item.title?.toUpperCase() || "(UNTITLED)" }}
       </v-list-item-title>
     </v-list-item>
   </v-list>
@@ -19,11 +21,13 @@
   <v-expansion-panels v-model="openPanels" class="left-fixed-menus">
     <v-expansion-panel
       class="mb-2"
-      v-for="(item,) in filteredNav.filter(i => i.children && i.children.length > 0)"
+      v-for="item in filteredNav.filter(
+        (i) => i.children && i.children.length > 0
+      )"
       :key="item.path"
     >
       <v-expansion-panel-title>
-        {{ item.title?.toUpperCase() || '(UNTITLED GROUP)' }}
+        {{ item.title?.toUpperCase() || "(UNTITLED GROUP)" }}
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <div class="d-flex flex-column">
@@ -34,7 +38,7 @@
             class="inner-ac-item"
             @click.stop
           >
-            {{ child.title?.toUpperCase() || '(UNTITLED)' }}
+            {{ child.title?.toUpperCase() || "(UNTITLED)" }}
           </RouterLink>
         </div>
       </v-expansion-panel-text>
@@ -43,38 +47,45 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, computed, watch } from "vue";
+import { useRoute } from "vue-router";
 
-const openPanels = ref([])
-const route = useRoute()
+const openPanels = ref([]);
+const route = useRoute();
 
-const { data: nav } = await useAsyncData('docs-nav', () =>
-  queryCollectionNavigation('docs')
-)
-const navBar = computed(() => nav.value?.[0]?.children || [])
-const { query } = useDocSearch()
+const { data: nav } = await useAsyncData("docs-nav", () =>
+  queryCollectionNavigation("docs")
+);
+const navBar = computed(() => nav.value?.[0]?.children || []);
+const { query } = useDocSearch();
 
 const filteredNav = computed(() => {
-  if (!query.value) return navBar.value
-  return navBar.value.filter(item =>
+  if (!query.value) return navBar.value;
+  return navBar.value.filter((item) =>
     item.title?.toLowerCase().includes(query.value.toLowerCase())
-  )
-})
+  );
+});
 
 // Auto-open the expansion panel containing the current route
 watch(
   () => route.path,
   (currentPath) => {
-    const parentIndex = filteredNav.value.findIndex(item =>
-      item.children?.some(child => child.path === currentPath)
-    )
-    if (parentIndex !== -1 && !openPanels.value.includes(parentIndex)) {
-      openPanels.value.push(parentIndex)
+    const parentIndex = filteredNav.value.findIndex((item) =>
+      item.children?.some((child) => child.path === currentPath)
+    );
+    if (parentIndex !== -1) {
+      const panels = Array.isArray(openPanels.value)
+        ? openPanels.value
+        : [openPanels.value].filter((v) => v != null); // turn single number into array
+
+      if (!panels.includes(parentIndex)) {
+        panels.push(parentIndex);
+        openPanels.value = panels;
+      }
     }
   },
   { immediate: true }
-)
+);
 </script>
 
 <style>
@@ -91,28 +102,29 @@ watch(
   font-size: 0.8rem;
   text-decoration: underline !important;
 }
-.v-expansion-panel--active > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
+.v-expansion-panel--active
+  > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
   min-height: 48px !important;
 }
-.router-link-exact-active{
+.router-link-exact-active {
   font-weight: bold;
 }
-.v-expansion-panel--active:not(:first-child), .v-expansion-panel--active + .v-expansion-panel {
-    margin-top: auto !important;
+.v-expansion-panel--active:not(:first-child),
+.v-expansion-panel--active + .v-expansion-panel {
+  margin-top: auto !important;
 }
-.left-fixed-menus{
+.left-fixed-menus {
   height: 65vh;
   overflow-y: auto;
   padding-right: 15px !important;
-  
 }
-.left-fixed-menus .v-expansion-panel{
+.left-fixed-menus .v-expansion-panel {
   background: none;
 }
-.left-fixed-menus .v-expansion-panel .v-expansion-panel__shadow{
+.left-fixed-menus .v-expansion-panel .v-expansion-panel__shadow {
   box-shadow: none;
 }
-.left-fixed-menus  .v-expansion-panel-text{
+.left-fixed-menus .v-expansion-panel-text {
   background: #fff;
 }
 </style>
