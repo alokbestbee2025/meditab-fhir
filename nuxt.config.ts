@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     nitro: {
     preset: 'vercel',
     prerender: {
-      crawlLinks: false, // Change to false to prevent duplicate generation
+      crawlLinks: true, // Change to false to prevent duplicate generation
       routes: ['/']
     }
   },
