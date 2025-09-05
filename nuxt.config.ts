@@ -6,7 +6,14 @@ export default defineNuxtConfig({
     preset: 'vercel',
     prerender: {
     crawlLinks: true,
-    routes: ['/']
+    routes: [
+      '/',
+      '/docs',
+      'docs/care-team/read',
+      '/docs/care-team/search',
+      '/docs/observation/read',
+      '/docs/observation/search'
+    ]
   }
   },
   compatibilityDate: '2025-05-15',

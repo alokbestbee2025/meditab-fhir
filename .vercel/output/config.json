@@ -4,20 +4,35 @@
     "index.html": {
       "path": ""
     },
+    "docs/index.html": {
+      "path": "docs"
+    },
+    "docs/observation/read/index.html": {
+      "path": "docs/observation/read"
+    },
+    "docs/care-team/search/index.html": {
+      "path": "docs/care-team/search"
+    },
+    "docs/observation/search/index.html": {
+      "path": "docs/observation/search"
+    },
     "build-apps/index.html": {
       "path": "build-apps"
     },
-    "documentation/index.html": {
-      "path": "documentation"
-    },
     "Documentation/index.html": {
       "path": "Documentation"
+    },
+    "documentation/index.html": {
+      "path": "documentation"
     },
     "Build-Apps/index.html": {
       "path": "Build-Apps"
     },
     "docs/allergy-intolerance/search/index.html": {
       "path": "docs/allergy-intolerance/search"
+    },
+    "docs/care-team/read/index.html": {
+      "path": "docs/care-team/read"
     },
     "docs/allergy-intolerance/read/index.html": {
       "path": "docs/allergy-intolerance/read"
