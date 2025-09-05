@@ -1,20 +1,23 @@
 // nuxt.config.js
-
+import { generateRoutes } from './utils/routes'
 export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'vercel',
     prerender: {
-    crawlLinks: true,
-    routes: [
-      '/',
-      '/docs',
-      'docs/care-team/read',
-      '/docs/care-team/search',
-      '/docs/observation/read',
-      '/docs/observation/search'
-    ]
-  }
+      crawlLinks: true,
+      routes: ['/'] // Default route
+    }
+  },
+  hooks: {
+    'nitro:config': async (nitroConfig) => {
+      try {
+        const generatedRoutes = await generateRoutes()
+        nitroConfig.prerender.routes = generatedRoutes
+      } catch (error) {
+        console.error('Failed to generate routes:', error)
+      }
+    }
   },
   compatibilityDate: '2025-05-15',
   devtools: {
