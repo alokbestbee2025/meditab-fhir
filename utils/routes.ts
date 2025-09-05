@@ -1,11 +1,11 @@
-import { promises as fs } from 'fs'
+// utils/routes.ts
 import { join } from 'path'
 import glob from 'fast-glob'
 
-export async function generateRoutes() {
+export async function generateRoutes(): Promise<string[]> {
   const contentDir = join(process.cwd(), 'content')
-  
-  // Static routes that should always be included
+
+  // static routes you always want
   const staticRoutes = [
     '/',
     '/docs',
@@ -14,30 +14,30 @@ export async function generateRoutes() {
   ]
 
   try {
-    // Find all .md files in content directory recursively
     const files = await glob('**/*.md', {
-      cwd: contentDir
+      cwd: contentDir,
+      dot: false,
+      onlyFiles: true,
+      ignore: ['**/node_modules/**', '**/.git/**', '**/README.md'] // adjust ignores if needed
     })
 
-    // Convert markdown files to routes and include all variations
-    const dynamicRoutes = files.flatMap(file => {
-      const route = '/' + file.replace(/\.md$/, '')
-      return [
-        route,
-        `${route}/index.html`,
-        `${route}.html`
-      ]
+    const dynamicRoutes = files.map((rawPath) => {
+      // normalize to forward slashes for safety
+      const pathPosix = rawPath.replace(/\\/g, '/')
+      // drop extension
+      let route = '/' + pathPosix.replace(/\.md$/i, '')
+      // handle index.md -> parent directory
+      route = route.replace(/\/index$/i, '') || '/'
+      // normalize: collapse multiple slashes, lowercase
+      route = route.replace(/\/+/g, '/').toLowerCase()
+      return route
     })
 
-    // Combine static and dynamic routes
-    const allRoutes = [...staticRoutes, ...dynamicRoutes]
-    
-    // Remove duplicates and filter out any empty routes
-    const uniqueRoutes = [...new Set(allRoutes)].filter(Boolean)
-
-    return uniqueRoutes
-  } catch (error) {
-    console.error('Error generating routes:', error)
-    return staticRoutes
+    const all = [...staticRoutes, ...dynamicRoutes]
+    const unique = [...new Set(all)].filter(Boolean)
+    return unique
+  } catch (err) {
+    console.error('Error generating routes:', err)
+    return ['/'] // safe fallback
   }
 }
