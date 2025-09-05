@@ -5,22 +5,16 @@ export default defineNuxtConfig({
     nitro: {
     preset: 'vercel',
     prerender: {
-      crawlLinks: true,
-      routes: ['/'],
-      ignore: ['/api/**']
+      crawlLinks: false, // Change to false to prevent duplicate generation
+      routes: ['/']
     }
   },
   hooks: {
     'nitro:config': async (nitroConfig) => {
       try {
-        const generatedRoutes = await generateRoutes()
+        const routes = await generateRoutes()
         if (nitroConfig.prerender) {
-          nitroConfig.prerender.routes = [
-            ...new Set([
-              ...(nitroConfig.prerender.routes || []),
-              ...generatedRoutes
-            ])
-          ]
+          nitroConfig.prerender.routes = routes
         }
       } catch (error) {
         console.error('Failed to generate routes:', error)
@@ -28,7 +22,7 @@ export default defineNuxtConfig({
     }
   },
   experimental: {
-    payloadExtraction: true
+    payloadExtraction: false // Disable payload extraction since we're using full SSG
   },
   compatibilityDate: '2025-05-15',
   devtools: {
