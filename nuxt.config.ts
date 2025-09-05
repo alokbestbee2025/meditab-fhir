@@ -2,22 +2,33 @@
 import { generateRoutes } from './utils/routes'
 export default defineNuxtConfig({
   ssr: true,
-  nitro: {
+    nitro: {
     preset: 'vercel',
     prerender: {
       crawlLinks: true,
-      routes: ['/'] // Default route
+      routes: ['/'],
+      ignore: ['/api/**']
     }
   },
   hooks: {
     'nitro:config': async (nitroConfig) => {
       try {
         const generatedRoutes = await generateRoutes()
-        nitroConfig.prerender.routes = generatedRoutes
+        if (nitroConfig.prerender) {
+          nitroConfig.prerender.routes = [
+            ...new Set([
+              ...(nitroConfig.prerender.routes || []),
+              ...generatedRoutes
+            ])
+          ]
+        }
       } catch (error) {
         console.error('Failed to generate routes:', error)
       }
     }
+  },
+  experimental: {
+    payloadExtraction: true
   },
   compatibilityDate: '2025-05-15',
   devtools: {

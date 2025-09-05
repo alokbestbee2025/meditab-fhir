@@ -9,7 +9,7 @@ export async function generateRoutes() {
   const staticRoutes = [
     '/',
     '/docs',
-    '/build-Apps',
+    '/build-apps',
     '/documentation'
   ]
 
@@ -19,11 +19,15 @@ export async function generateRoutes() {
       cwd: contentDir
     })
 
-    // Convert markdown files to routes
-    const dynamicRoutes = files.map(file => {
-      // Remove .md extension and convert to route path
+    // Convert markdown files to routes and include payload routes
+    const dynamicRoutes = files.flatMap(file => {
       const route = '/' + file.replace(/\.md$/, '')
-      return route
+      return [
+        route,
+        `${route}/index.html`,
+        `${route}.html`,
+        `${route}/_payload.json`
+      ]
     })
 
     // Combine static and dynamic routes
@@ -35,6 +39,6 @@ export async function generateRoutes() {
     return uniqueRoutes
   } catch (error) {
     console.error('Error generating routes:', error)
-    return staticRoutes // Fallback to static routes if there's an error
+    return staticRoutes
   }
 }
