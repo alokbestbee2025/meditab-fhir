@@ -1,12 +1,11 @@
 // nuxt.config.js
 import { generateRoutes } from './utils/routes'
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
     nitro: {
     preset: 'vercel',
     prerender: {
       crawlLinks: true, // Change to false to prevent duplicate generation
-      routes: ['/'],
     }
   },
   hooks: {
