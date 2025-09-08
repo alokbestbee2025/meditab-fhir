@@ -1,1 +1,0 @@
-import{_ as s,c as o,o as t,aw as a}from"./B9FRVW17.js";const c={},r={class:"shadow-box-util"};function n(e,_){return t(),o("div",r,[a(e.$slots,"default")])}const l=s(c,[["render",n]]);export{l as B};
