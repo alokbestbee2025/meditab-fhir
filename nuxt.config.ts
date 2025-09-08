@@ -6,16 +6,7 @@ export default defineNuxtConfig({
     preset: 'vercel',
     prerender: {
       crawlLinks: true,
-      routes: [
-        '/',
-        '/Documentation',
-        '/Build-Apps',
-        '/docs/organization/read',
-        '/docs/organization/search',
-        '/docs/provenance/read',
-        '/docs/procedure/read',
-        '/docs/procedure/search'
-      ]
+      routes: ['/']
     }
   },
   hooks: {
