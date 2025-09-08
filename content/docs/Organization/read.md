@@ -1,7 +1,6 @@
 ---
 title: Read
-description: The organizational resource describes a grouping of people or business units relevant to the healthcare process. Organizations include hospitals, employers, insurance companies, medical practices, rehabilitation facilities, laboratories etc.
-
+description: The organizational resource describes a grouping of people or business units relevant to the healthcare process.
 toc:
   depth: 2
 ---

@@ -1,6 +1,6 @@
 ---
 title: Read
-description: The provenance resource returns contextual metadata about the origin of another resource, such as who created or submitted data about the target resource. Commonly , provenance data is requested as part of the search interaction for a different resource , as described in the FHIR Search Parameters documentation.
+description: The provenance resource returns contextual metadata about the origin of another resource, such as who created or submitted data about the target resource.
 
 toc:
   depth: 2
