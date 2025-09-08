@@ -1,11 +1,11 @@
 {
   "version": 3,
   "overrides": {
-    "build-apps/index.html": {
-      "path": "build-apps"
-    },
     "documentation/index.html": {
       "path": "documentation"
+    },
+    "build-apps/index.html": {
+      "path": "build-apps"
     },
     "registration/index.html": {
       "path": "registration"
@@ -13,14 +13,8 @@
     "index.html": {
       "path": ""
     },
-    "docs/care-team/read/index.html": {
-      "path": "docs/care-team/read"
-    },
     "docs/care-plan/read/index.html": {
       "path": "docs/care-plan/read"
-    },
-    "docs/device/search/index.html": {
-      "path": "docs/device/search"
     },
     "docs/allergy-intolerance/read/index.html": {
       "path": "docs/allergy-intolerance/read"
@@ -31,41 +25,50 @@
     "docs/diagnostic-report/read/index.html": {
       "path": "docs/diagnostic-report/read"
     },
-    "docs/care-plan/search/index.html": {
-      "path": "docs/care-plan/search"
+    "docs/allergy-intolerance/search/index.html": {
+      "path": "docs/allergy-intolerance/search"
     },
     "docs/care-team/search/index.html": {
       "path": "docs/care-team/search"
     },
+    "docs/care-team/read/index.html": {
+      "path": "docs/care-team/read"
+    },
     "docs/condition/search/index.html": {
       "path": "docs/condition/search"
+    },
+    "docs/device/search/index.html": {
+      "path": "docs/device/search"
+    },
+    "docs/care-plan/search/index.html": {
+      "path": "docs/care-plan/search"
     },
     "docs/device/read/index.html": {
       "path": "docs/device/read"
     },
+    "docs/document-reference/read/index.html": {
+      "path": "docs/document-reference/read"
+    },
     "docs/diagnostic-report/search/index.html": {
       "path": "docs/diagnostic-report/search"
-    },
-    "docs/allergy-intolerance/search/index.html": {
-      "path": "docs/allergy-intolerance/search"
-    },
-    "docs/encounter/read/index.html": {
-      "path": "docs/encounter/read"
     },
     "docs/document-reference/search/index.html": {
       "path": "docs/document-reference/search"
     },
-    "docs/document-reference/read/index.html": {
-      "path": "docs/document-reference/read"
+    "docs/encounter/read/index.html": {
+      "path": "docs/encounter/read"
     },
     "docs/encounter/search/index.html": {
       "path": "docs/encounter/search"
     },
-    "docs/goal/read/index.html": {
-      "path": "docs/goal/read"
+    "docs/goal/search/index.html": {
+      "path": "docs/goal/search"
     },
     "docs/medication-request/read/index.html": {
       "path": "docs/medication-request/read"
+    },
+    "docs/goal/read/index.html": {
+      "path": "docs/goal/read"
     },
     "docs/observation/read/index.html": {
       "path": "docs/observation/read"
@@ -73,8 +76,14 @@
     "docs/organization/read/index.html": {
       "path": "docs/organization/read"
     },
-    "docs/goal/search/index.html": {
-      "path": "docs/goal/search"
+    "docs/practitioner/read/index.html": {
+      "path": "docs/practitioner/read"
+    },
+    "docs/procedure/search/index.html": {
+      "path": "docs/procedure/search"
+    },
+    "docs/patient/read/index.html": {
+      "path": "docs/patient/read"
     },
     "docs/observation/search/index.html": {
       "path": "docs/observation/search"
@@ -82,29 +91,20 @@
     "docs/medication-request/search/index.html": {
       "path": "docs/medication-request/search"
     },
-    "docs/patient/read/index.html": {
-      "path": "docs/patient/read"
-    },
-    "docs/organization/search/index.html": {
-      "path": "docs/organization/search"
-    },
-    "docs/practitioner/read/index.html": {
-      "path": "docs/practitioner/read"
-    },
-    "docs/patient/search/index.html": {
-      "path": "docs/patient/search"
-    },
     "docs/procedure/read/index.html": {
       "path": "docs/procedure/read"
     },
     "docs/practitioner/search/index.html": {
       "path": "docs/practitioner/search"
     },
+    "docs/organization/search/index.html": {
+      "path": "docs/organization/search"
+    },
+    "docs/patient/search/index.html": {
+      "path": "docs/patient/search"
+    },
     "docs/provenance/read/index.html": {
       "path": "docs/provenance/read"
-    },
-    "docs/procedure/search/index.html": {
-      "path": "docs/procedure/search"
     },
     "docs/provenance2/read/index.html": {
       "path": "docs/provenance2/read"
