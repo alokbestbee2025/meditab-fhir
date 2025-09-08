@@ -71,8 +71,6 @@ export default defineNuxtConfig({
     }
   },
   
-  // This is a crucial fix for production builds.
-  // It tells Nuxt to explicitly process Vuetify to prevent build errors.
   build: {
     transpile: ['vuetify'],
   },
