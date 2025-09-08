@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm run generate",
-  "outputDirectory": ".output",
+  "outputDirectory": ".vercel/output",
   "framework": "nuxt"
 }
