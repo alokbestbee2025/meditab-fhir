@@ -1,7 +1,6 @@
 ---
 title: Read
 description: The provenance resource returns contextual metadata about the origin of another resource, such as who created or submitted data about the target resource.
-
 toc:
   depth: 2
 ---
