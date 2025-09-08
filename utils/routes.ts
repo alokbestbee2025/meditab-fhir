@@ -8,7 +8,6 @@ export async function generateRoutes(): Promise<string[]> {
   // static routes you always want
   const staticRoutes = [
     '/',
-    '/docs/provenance/read',
     '/build-apps',
     '/documentation'
   ]

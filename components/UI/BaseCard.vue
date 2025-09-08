@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scopped>
 .shadow-box-util {
   background-color: white;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); /* gray spreaded shadow */

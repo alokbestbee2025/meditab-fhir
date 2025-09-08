@@ -6,13 +6,14 @@ export default defineNuxtConfig({
     preset: 'vercel',
     prerender: {
       crawlLinks: true, // Change to false to prevent duplicate generation
-      routes: ['/']
+      routes: ['/'],
     }
   },
   hooks: {
     'nitro:config': async (nitroConfig) => {
       try {
-        const routes = await generateRoutes()
+        const routes = await generateRoutes();
+        console.log('Generated routes:', routes)
         if (nitroConfig.prerender) {
           nitroConfig.prerender.routes = routes
         }
@@ -98,4 +99,19 @@ export default defineNuxtConfig({
       }
     }
   } as any,
+
+  
+  // dotenv
+   runtimeConfig: {
+    public: {
+      // Public runtime config
+    },
+    // Private runtime config
+    emailHost: process.env.EMAIL_HOST,
+    emailPort: process.env.EMAIL_PORT,
+    emailUser: process.env.EMAIL_USER,
+    emailPass: process.env.EMAIL_PASS,
+    emailFrom: process.env.EMAIL_FROM,
+    emailTo: process.env.EMAIL_TO,
+  },
 })

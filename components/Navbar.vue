@@ -56,7 +56,23 @@ const route = useRoute();
 const { data: nav } = await useAsyncData("docs-nav", () =>
   queryCollectionNavigation("docs")
 );
-const navBar = computed(() => nav.value?.[0]?.children || []);
+const navBar = computed(() => {
+  const items = nav.value?.[0]?.children || [];
+  // sort top-level items alphabetically (case-insensitive)
+  items.sort((a, b) =>
+    (a.title || "").localeCompare(b.title || "", undefined, { sensitivity: "base" })
+  );
+  // sort children of each item too (optional)
+  items.forEach((item) => {
+    if (Array.isArray(item.children)) {
+      item.children.sort((a, b) =>
+        (a.title || "").localeCompare(b.title || "", undefined, { sensitivity: "base" })
+      );
+    }
+  });
+  return items;
+});
+
 const { query } = useDocSearch();
 
 const filteredNav = computed(() => {

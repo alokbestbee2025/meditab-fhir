@@ -10,17 +10,11 @@
     "index.html": {
       "path": ""
     },
-    "docs/diagnostic-report/search/index.html": {
-      "path": "docs/diagnostic-report/search"
+    "docs/document-reference/search/index.html": {
+      "path": "docs/document-reference/search"
     },
-    "docs/care-plan/read/index.html": {
-      "path": "docs/care-plan/read"
-    },
-    "docs/provenance/read/index.html": {
-      "path": "docs/provenance/read"
-    },
-    "docs/condition/read/index.html": {
-      "path": "docs/condition/read"
+    "docs/encounter/search/index.html": {
+      "path": "docs/encounter/search"
     },
     "docs/allergy-intolerance/search/index.html": {
       "path": "docs/allergy-intolerance/search"
@@ -28,8 +22,32 @@
     "docs/care-team/read/index.html": {
       "path": "docs/care-team/read"
     },
+    "docs/device/search/index.html": {
+      "path": "docs/device/search"
+    },
+    "docs/encounter/read/index.html": {
+      "path": "docs/encounter/read"
+    },
+    "docs/care-plan/read/index.html": {
+      "path": "docs/care-plan/read"
+    },
+    "docs/condition/search/index.html": {
+      "path": "docs/condition/search"
+    },
+    "docs/diagnostic-report/search/index.html": {
+      "path": "docs/diagnostic-report/search"
+    },
+    "docs/diagnostic-report/read/index.html": {
+      "path": "docs/diagnostic-report/read"
+    },
+    "docs/device/read/index.html": {
+      "path": "docs/device/read"
+    },
     "docs/document-reference/read/index.html": {
       "path": "docs/document-reference/read"
+    },
+    "docs/care-team/search/index.html": {
+      "path": "docs/care-team/search"
     },
     "docs/allergy-intolerance/read/index.html": {
       "path": "docs/allergy-intolerance/read"
@@ -37,35 +55,17 @@
     "docs/care-plan/search/index.html": {
       "path": "docs/care-plan/search"
     },
-    "docs/device/search/index.html": {
-      "path": "docs/device/search"
+    "docs/condition/read/index.html": {
+      "path": "docs/condition/read"
     },
-    "docs/document-reference/search/index.html": {
-      "path": "docs/document-reference/search"
-    },
-    "docs/diagnostic-report/read/index.html": {
-      "path": "docs/diagnostic-report/read"
-    },
-    "docs/encounter/read/index.html": {
-      "path": "docs/encounter/read"
-    },
-    "docs/condition/search/index.html": {
-      "path": "docs/condition/search"
-    },
-    "docs/device/read/index.html": {
-      "path": "docs/device/read"
-    },
-    "docs/care-team/search/index.html": {
-      "path": "docs/care-team/search"
-    },
-    "docs/encounter/search/index.html": {
-      "path": "docs/encounter/search"
+    "docs/goal/search/index.html": {
+      "path": "docs/goal/search"
     },
     "docs/goal/read/index.html": {
       "path": "docs/goal/read"
     },
-    "docs/goal/search/index.html": {
-      "path": "docs/goal/search"
+    "docs/observation/read/index.html": {
+      "path": "docs/observation/read"
     },
     "docs/medication-request/read/index.html": {
       "path": "docs/medication-request/read"
@@ -73,20 +73,17 @@
     "docs/organization/read/index.html": {
       "path": "docs/organization/read"
     },
-    "docs/observation/search/index.html": {
-      "path": "docs/observation/search"
-    },
     "docs/patient/read/index.html": {
       "path": "docs/patient/read"
+    },
+    "docs/organization/search/index.html": {
+      "path": "docs/organization/search"
     },
     "docs/medication-request/search/index.html": {
       "path": "docs/medication-request/search"
     },
-    "docs/observation/read/index.html": {
-      "path": "docs/observation/read"
-    },
-    "docs/organization/search/index.html": {
-      "path": "docs/organization/search"
+    "docs/observation/search/index.html": {
+      "path": "docs/observation/search"
     },
     "docs/patient/search/index.html": {
       "path": "docs/patient/search"
@@ -94,20 +91,26 @@
     "docs/procedure/read/index.html": {
       "path": "docs/procedure/read"
     },
+    "docs/provenance/read/index.html": {
+      "path": "docs/provenance/read"
+    },
     "docs/practitioner/read/index.html": {
       "path": "docs/practitioner/read"
-    },
-    "docs/practitioner/search/index.html": {
-      "path": "docs/practitioner/search"
     },
     "docs/procedure/search/index.html": {
       "path": "docs/procedure/search"
     },
-    "Build-Apps/index.html": {
-      "path": "Build-Apps"
+    "docs/practitioner/search/index.html": {
+      "path": "docs/practitioner/search"
     },
     "Documentation/index.html": {
       "path": "Documentation"
+    },
+    "Build-Apps/index.html": {
+      "path": "Build-Apps"
+    },
+    "Registration/index.html": {
+      "path": "Registration"
     }
   },
   "routes": [
