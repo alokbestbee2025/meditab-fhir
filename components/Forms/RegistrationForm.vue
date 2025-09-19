@@ -144,7 +144,7 @@ async function handleSubmit() {
     message: message.value,
   };
   try {
-    const res = await fetch("api/contact-post", {
+    const res = await fetch("api/contact-mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
