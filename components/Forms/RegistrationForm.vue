@@ -162,7 +162,6 @@ async function handleSubmit() {
     router.replace("/");
 } catch (error) {
     console.error("Form submission error:", error);
-    alert("Failed to submit form. Please try again.");
 } finally {
     isLoading.value = false;
 }
