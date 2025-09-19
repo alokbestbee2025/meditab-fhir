@@ -7,7 +7,10 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ['/']
-    }
+    },
+    output: {
+    dir: '.output'
+  }
   },
   hooks: {
     'nitro:config': async (nitroConfig) => {
