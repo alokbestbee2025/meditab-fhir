@@ -8,9 +8,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/']
     },
-    output: {
-    dir: '.output'
-  }
   },
   hooks: {
     'nitro:config': async (nitroConfig) => {

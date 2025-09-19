@@ -1,0 +1,4 @@
+const TocContent_vue_vue_type_style_index_0_scoped_6ae522d4_lang = '.toc-container[data-v-6ae522d4]{font-size:.95rem;padding:1rem;position:sticky;top:100px}.toc-container ul[data-v-6ae522d4]{border-left:4px solid #ddd;border-radius:2px;list-style:none;margin:0;padding:0}.toc-container li[data-v-6ae522d4]{margin:.25rem 0;padding-left:1rem;position:relative}.toc-container li.active[data-v-6ae522d4]:before{background-color:#0d3b66;border-radius:2px;content:"";height:1.4rem;left:-4px;position:absolute;top:4px;width:4px}.toc-container a[data-v-6ae522d4]{color:#555;text-decoration:none;transition:color .2s ease}.toc-container li.active a[data-v-6ae522d4]{color:#0d3b66;font-weight:600}';
+
+export { TocContent_vue_vue_type_style_index_0_scoped_6ae522d4_lang as T };
+//# sourceMappingURL=TocContent-styles-1.mjs-BfEVrU3j.mjs.map

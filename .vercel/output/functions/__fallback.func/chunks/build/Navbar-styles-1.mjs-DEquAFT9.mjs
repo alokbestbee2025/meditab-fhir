@@ -1,0 +1,4 @@
+const Navbar_vue_vue_type_style_index_0_lang = ".v-expansion-panel-title{background-color:rgb(var(--v-theme-navItem))!important;font-size:.8rem!important;font-weight:600;padding:10px!important}.v-expansion-panel-text__wrapper{padding:15px!important}.inner-ac-item{font-size:.8rem;text-decoration:underline!important}.v-expansion-panel--active>.v-expansion-panel-title:not(.v-expansion-panel-title--static){min-height:48px!important}.router-link-exact-active{font-weight:700}.v-expansion-panel--active+.v-expansion-panel,.v-expansion-panel--active:not(:first-child){margin-top:auto!important}.left-fixed-menus{height:65vh;overflow-y:auto;padding-right:15px!important}.left-fixed-menus .v-expansion-panel{background:none}.left-fixed-menus .v-expansion-panel .v-expansion-panel__shadow{box-shadow:none}.left-fixed-menus .v-expansion-panel-text{background:#fff}";
+
+export { Navbar_vue_vue_type_style_index_0_lang as N };
+//# sourceMappingURL=Navbar-styles-1.mjs-DEquAFT9.mjs.map
