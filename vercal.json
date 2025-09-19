@@ -1,5 +1,17 @@
 {
+  "version": 2,
   "buildCommand": "npm run generate",
-  "outputDirectory": ".vercel/output",
-  "framework": "nuxt"
+  "framework": "nuxt",
+  "builds": [
+    {
+      "src": "nuxt.config.ts",
+      "use": "@nuxtjs/vercel-builder"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/.*",
+      "dest": "/server/api/$1"
+    }
+  ]
 }
