@@ -1,6 +1,24 @@
 {
   "version": 2,
   "framework": "nuxtjs",
-  "buildCommand": "npm run build",
-  "outputDirectory": ".output/public"
+  "builds": [
+    {
+      "src": ".output/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": ".output/server/**",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/.output/server/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/.output/public/$1"
+    }
+  ]
 }
