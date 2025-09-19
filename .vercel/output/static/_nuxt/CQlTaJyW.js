@@ -1,0 +1,1 @@
+import{_ as l,l as o,w as a,o as s,b as t,a as r}from"./DKxmS9-5.js";import{V as n,a as u,b as _}from"./DzxFpef0.js";const c={};function d(f,e){return s(),o(n,null,{default:a(()=>[t(u,null,{default:a(()=>[t(_,null,{default:a(()=>e[0]||(e[0]=[r("h2",null,"Build Apps",-1)])),_:1,__:[0]})]),_:1})]),_:1})}const V=l(c,[["render",d]]);export{V as default};
