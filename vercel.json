@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run generate",
-  "framework": "nuxt3",
+  "framework": "nuxtjs",
   "builds": [
     {
       "src": "nuxt.config.ts",
