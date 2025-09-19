@@ -144,20 +144,28 @@ async function handleSubmit() {
     message: message.value,
   };
   try {
-    const res = await fetch("api/contact-mail", {
+    const res = await fetch("/api/contact-mail", {  // Add leading slash
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"  // Add Accept header
       },
       body: JSON.stringify(formData),
     });
-    var data = await res.json();
+    
+    if (!res.ok) {  // Add error handling
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    
+    const data = await res.json();
     alert(data.message);
     router.replace("/");
+} catch (error) {
+    console.error("Form submission error:", error);
+    alert("Failed to submit form. Please try again.");
+} finally {
     isLoading.value = false;
-  } catch (error) {
-    console.error(error);
-  }
+}
 }
 </script>
 
