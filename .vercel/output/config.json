@@ -7,68 +7,65 @@
     "documentation/index.html": {
       "path": "documentation"
     },
-    "registration-page/index.html": {
-      "path": "registration-page"
-    },
     "index.html": {
       "path": ""
-    },
-    "docs/allergy-intolerance/read/index.html": {
-      "path": "docs/allergy-intolerance/read"
-    },
-    "docs/care-plan/read/index.html": {
-      "path": "docs/care-plan/read"
-    },
-    "docs/care-team/read/index.html": {
-      "path": "docs/care-team/read"
-    },
-    "docs/condition/read/index.html": {
-      "path": "docs/condition/read"
-    },
-    "docs/device/read/index.html": {
-      "path": "docs/device/read"
-    },
-    "docs/document-reference/read/index.html": {
-      "path": "docs/document-reference/read"
-    },
-    "docs/diagnostic-report/read/index.html": {
-      "path": "docs/diagnostic-report/read"
     },
     "docs/encounter/search/index.html": {
       "path": "docs/encounter/search"
     },
-    "docs/allergy-intolerance/search/index.html": {
-      "path": "docs/allergy-intolerance/search"
+    "docs/document-reference/search/index.html": {
+      "path": "docs/document-reference/search"
     },
-    "docs/care-team/search/index.html": {
-      "path": "docs/care-team/search"
+    "docs/condition/read/index.html": {
+      "path": "docs/condition/read"
     },
-    "docs/condition/search/index.html": {
-      "path": "docs/condition/search"
+    "docs/care-team/read/index.html": {
+      "path": "docs/care-team/read"
     },
-    "docs/device/search/index.html": {
-      "path": "docs/device/search"
+    "docs/care-plan/read/index.html": {
+      "path": "docs/care-plan/read"
     },
-    "docs/diagnostic-report/search/index.html": {
-      "path": "docs/diagnostic-report/search"
+    "docs/diagnostic-report/read/index.html": {
+      "path": "docs/diagnostic-report/read"
     },
     "docs/encounter/read/index.html": {
       "path": "docs/encounter/read"
     },
-    "docs/document-reference/search/index.html": {
-      "path": "docs/document-reference/search"
+    "docs/allergy-intolerance/read/index.html": {
+      "path": "docs/allergy-intolerance/read"
+    },
+    "docs/device/read/index.html": {
+      "path": "docs/device/read"
+    },
+    "docs/allergy-intolerance/search/index.html": {
+      "path": "docs/allergy-intolerance/search"
+    },
+    "docs/condition/search/index.html": {
+      "path": "docs/condition/search"
+    },
+    "docs/diagnostic-report/search/index.html": {
+      "path": "docs/diagnostic-report/search"
+    },
+    "docs/device/search/index.html": {
+      "path": "docs/device/search"
+    },
+    "docs/care-team/search/index.html": {
+      "path": "docs/care-team/search"
     },
     "docs/care-plan/search/index.html": {
       "path": "docs/care-plan/search"
     },
-    "docs/medication-request/read/index.html": {
-      "path": "docs/medication-request/read"
+    "docs/document-reference/read/index.html": {
+      "path": "docs/document-reference/read"
     },
-    "docs/goal/read/index.html": {
-      "path": "docs/goal/read"
+    "docs/observation/search/index.html": {
+      "path": "docs/observation/search"
     },
     "docs/observation/read/index.html": {
       "path": "docs/observation/read"
+    },
+    "docs/medication-request/read/index.html": {
+      "path": "docs/medication-request/read"
     },
     "docs/goal/search/index.html": {
       "path": "docs/goal/search"
@@ -76,23 +73,23 @@
     "docs/medication-request/search/index.html": {
       "path": "docs/medication-request/search"
     },
-    "docs/organization/read/index.html": {
-      "path": "docs/organization/read"
-    },
-    "docs/procedure/read/index.html": {
-      "path": "docs/procedure/read"
-    },
-    "docs/patient/read/index.html": {
-      "path": "docs/patient/read"
+    "docs/goal/read/index.html": {
+      "path": "docs/goal/read"
     },
     "docs/practitioner/read/index.html": {
       "path": "docs/practitioner/read"
     },
-    "docs/patient/search/index.html": {
-      "path": "docs/patient/search"
+    "docs/patient/read/index.html": {
+      "path": "docs/patient/read"
     },
-    "docs/observation/search/index.html": {
-      "path": "docs/observation/search"
+    "docs/procedure/read/index.html": {
+      "path": "docs/procedure/read"
+    },
+    "docs/organization/read/index.html": {
+      "path": "docs/organization/read"
+    },
+    "docs/provenance/read/index.html": {
+      "path": "docs/provenance/read"
     },
     "docs/organization/search/index.html": {
       "path": "docs/organization/search"
@@ -103,8 +100,11 @@
     "docs/procedure/search/index.html": {
       "path": "docs/procedure/search"
     },
-    "docs/provenance/read/index.html": {
-      "path": "docs/provenance/read"
+    "docs/patient/search/index.html": {
+      "path": "docs/patient/search"
+    },
+    "registration-page/index.html": {
+      "path": "registration-page"
     }
   },
   "routes": [

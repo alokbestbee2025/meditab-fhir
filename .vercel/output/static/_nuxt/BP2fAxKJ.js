@@ -1,0 +1,1 @@
+import{_ as o,l as n,w as a,o as l,b as t,a as r}from"#entry";import{V as s,a as c,b as u}from"./BgwQOaFo.js";const f={};function _(d,e){return l(),n(s,null,{default:a(()=>[t(c,null,{default:a(()=>[t(u,null,{default:a(()=>[...e[0]||(e[0]=[r("h2",null,"Documentation Page",-1)])]),_:1})]),_:1})]),_:1})}const V=o(f,[["render",_]]);export{V as default};
