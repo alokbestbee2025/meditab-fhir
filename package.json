@@ -26,6 +26,7 @@
     "vuetify-nuxt-module": "^0.16.1"
   },
   "devDependencies": {
+    "@nuxtjs/vercel-builder": "^0.25.0",
     "fast-glob": "^3.3.3"
   }
 }
