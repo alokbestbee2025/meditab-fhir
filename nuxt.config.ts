@@ -3,7 +3,7 @@ import { generateRoutes } from './utils/routes'
 export default defineNuxtConfig({
   ssr: false,
     nitro: {
-    preset: 'vercel-static',
+    preset: 'vercel',
     prerender: {
       crawlLinks: true,
       routes: ['/']
