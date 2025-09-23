@@ -1,7 +1,7 @@
 // nuxt.config.js
 import { generateRoutes } from './utils/routes'
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
     nitro: {
     preset: 'vercel',
     prerender: {

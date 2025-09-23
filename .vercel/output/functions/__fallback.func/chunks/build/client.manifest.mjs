@@ -262,9 +262,7 @@ const client_manifest = {
       "_eVmAACfW.js",
       "_DJ74i2E1.js"
     ],
-    "css": [
-      "default.BEI12kYC.css"
-    ],
+    "css": [],
     "assets": [
       "logo.B3faB_hu.png"
     ]
@@ -507,9 +505,7 @@ const client_manifest = {
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
-    "css": [
-      "ProsePre.D5orA6B_.css"
-    ]
+    "css": []
   },
   "ProsePre.D5orA6B_.css": {
     "file": "ProsePre.D5orA6B_.css",
@@ -673,9 +669,7 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/entry.js",
       "_Hsbwpiff.js"
     ],
-    "css": [
-      "error-404.DqZyKpgk.css"
-    ]
+    "css": []
   },
   "error-404.DqZyKpgk.css": {
     "file": "error-404.DqZyKpgk.css",
@@ -696,9 +690,7 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/entry.js",
       "_Hsbwpiff.js"
     ],
-    "css": [
-      "error-500.CZqNkBuR.css"
-    ]
+    "css": []
   },
   "error-500.CZqNkBuR.css": {
     "file": "error-500.CZqNkBuR.css",
@@ -711,7 +703,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "FgY3MkFj.js",
+    "file": "QhpRjbS2.js",
     "name": "entry",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -721,30 +713,15 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/components/error-500.vue"
     ],
     "css": [
-      "entry.DaSrwNDn.css"
+      "entry.RiT3v3I3.css"
     ],
-    "assets": [
-      "Banner.DMLZivwm.png",
-      "01-02.BcTxznwN.png"
-    ]
+    "_globalCSS": true
   },
-  "entry.DaSrwNDn.css": {
-    "file": "entry.DaSrwNDn.css",
+  "entry.RiT3v3I3.css": {
+    "file": "entry.RiT3v3I3.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
-  },
-  "Banner.DMLZivwm.png": {
-    "file": "Banner.DMLZivwm.png",
-    "resourceType": "image",
-    "prefetch": true,
-    "mimeType": "image/png"
-  },
-  "01-02.BcTxznwN.png": {
-    "file": "01-02.BcTxznwN.png",
-    "resourceType": "image",
-    "prefetch": true,
-    "mimeType": "image/png"
   },
   "pages/build-apps.vue": {
     "resourceType": "script",
@@ -779,9 +756,7 @@ const client_manifest = {
     "dynamicImports": [
       "components/content/CodeBlock.vue"
     ],
-    "css": [
-      "_...BfhdWX2n.css"
-    ]
+    "css": []
   },
   "_...BfhdWX2n.css": {
     "file": "_...BfhdWX2n.css",
