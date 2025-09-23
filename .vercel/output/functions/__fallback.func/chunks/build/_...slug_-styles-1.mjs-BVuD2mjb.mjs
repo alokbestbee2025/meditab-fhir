@@ -1,4 +1,0 @@
-const ____slug__vue_vue_type_style_index_0_scoped_7d8243c7_lang = ".left-sidebar-col[data-v-7d8243c7]{background-color:rgb(var(--v-theme-leftSidebar));min-height:100vh;padding:15px 15px 15px 25px!important;position:sticky;top:64px}.sticky-holder[data-v-7d8243c7]{height:calc(100vh - 64px);overflow-y:auto}.right-sidebar[data-v-7d8243c7],.sticky-holder[data-v-7d8243c7]{position:sticky;top:12%}.left-sidebar[data-v-7d8243c7]{background:transparent}.markdown-content ol[data-v-7d8243c7]{margin:1rem 0!important;padding-left:2rem!important}.markdown-content ol ol[data-v-7d8243c7]{margin:.5rem 0!important}.markdown-content li[data-v-7d8243c7]{list-style-type:decimal!important;margin:.25rem 0!important}@media (max-width:1024px){.toc-column-wrapper[data-v-7d8243c7]{display:none}}";
-
-export { ____slug__vue_vue_type_style_index_0_scoped_7d8243c7_lang as _ };
-//# sourceMappingURL=_...slug_-styles-1.mjs-BVuD2mjb.mjs.map

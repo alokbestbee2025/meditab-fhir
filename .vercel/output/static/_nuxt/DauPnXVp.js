@@ -1,1 +1,0 @@
-import{_ as l,l as o,w as a,o as s,b as t,a as r}from"#entry";import{V as n,a as u,b as c}from"./BgwQOaFo.js";const d={};function f(_,e){return s(),o(n,null,{default:a(()=>[t(u,null,{default:a(()=>[t(c,null,{default:a(()=>[...e[0]||(e[0]=[r("h2",null,"Build Apps",-1)])]),_:1})]),_:1})]),_:1})}const V=l(d,[["render",f]]);export{V as default};
