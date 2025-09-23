@@ -130,41 +130,46 @@ const phoneRule = (value) =>
 
 async function handleSubmit() {
   isLoading.value = true;
-  let formData = {};
-  if (!formRef.value?.validate()) {
-    return;
-  }
-  formData = {
-    firstName: firstName.value,
-    lastName: lastName.value,
-    email: email.value,
-    product: product.value,
-    phone: phone.value,
-    country: country.value,
-    message: message.value,
-  };
+  
   try {
-    const res = await fetch("/api/contact-mail", {  // Add leading slash
-      method: "POST",
+    const valid = await formRef.value?.validate();
+    if (!valid) {
+      throw new Error('Form validation failed');
+    }
+
+    const formData = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      product: product.value,
+      phone: phone.value,
+      country: country.value,
+      message: message.value,
+    };
+
+    const response = await fetch('/api/contact-mail', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"  // Add Accept header
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     });
-    
-    if (!res.ok) {  // Add error handling
-      throw new Error(`HTTP error! status: ${res.status}`);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Submission failed');
     }
-    
-    const data = await res.json();
+
+    const data = await response.json();
     alert(data.message);
-    router.replace("/");
-} catch (error) {
-    console.error("Form submission error:", error);
-} finally {
+    router.push('/');
+    
+  } catch (error) {
+    console.error('Form submission error:', error);
+    alert('Failed to submit form: ' + error.message);
+  } finally {
     isLoading.value = false;
-}
+  }
 }
 </script>
 
