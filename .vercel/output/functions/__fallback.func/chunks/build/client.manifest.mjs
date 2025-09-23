@@ -262,7 +262,9 @@ const client_manifest = {
       "_eVmAACfW.js",
       "_DJ74i2E1.js"
     ],
-    "css": [],
+    "css": [
+      "default.BEI12kYC.css"
+    ],
     "assets": [
       "logo.B3faB_hu.png"
     ]
@@ -505,7 +507,9 @@ const client_manifest = {
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
-    "css": []
+    "css": [
+      "ProsePre.D5orA6B_.css"
+    ]
   },
   "ProsePre.D5orA6B_.css": {
     "file": "ProsePre.D5orA6B_.css",
@@ -669,7 +673,9 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/entry.js",
       "_Hsbwpiff.js"
     ],
-    "css": []
+    "css": [
+      "error-404.DqZyKpgk.css"
+    ]
   },
   "error-404.DqZyKpgk.css": {
     "file": "error-404.DqZyKpgk.css",
@@ -690,7 +696,9 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/entry.js",
       "_Hsbwpiff.js"
     ],
-    "css": []
+    "css": [
+      "error-500.CZqNkBuR.css"
+    ]
   },
   "error-500.CZqNkBuR.css": {
     "file": "error-500.CZqNkBuR.css",
@@ -703,7 +711,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CtwM-6nR.js",
+    "file": "FgY3MkFj.js",
     "name": "entry",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -713,15 +721,30 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/components/error-500.vue"
     ],
     "css": [
-      "entry.RiT3v3I3.css"
+      "entry.DaSrwNDn.css"
     ],
-    "_globalCSS": true
+    "assets": [
+      "Banner.DMLZivwm.png",
+      "01-02.BcTxznwN.png"
+    ]
   },
-  "entry.RiT3v3I3.css": {
-    "file": "entry.RiT3v3I3.css",
+  "entry.DaSrwNDn.css": {
+    "file": "entry.DaSrwNDn.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
+  },
+  "Banner.DMLZivwm.png": {
+    "file": "Banner.DMLZivwm.png",
+    "resourceType": "image",
+    "prefetch": true,
+    "mimeType": "image/png"
+  },
+  "01-02.BcTxznwN.png": {
+    "file": "01-02.BcTxznwN.png",
+    "resourceType": "image",
+    "prefetch": true,
+    "mimeType": "image/png"
   },
   "pages/build-apps.vue": {
     "resourceType": "script",
@@ -756,7 +779,9 @@ const client_manifest = {
     "dynamicImports": [
       "components/content/CodeBlock.vue"
     ],
-    "css": []
+    "css": [
+      "_...BfhdWX2n.css"
+    ]
   },
   "_...BfhdWX2n.css": {
     "file": "_...BfhdWX2n.css",
@@ -799,7 +824,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "D5tYvvv8.js",
+    "file": "PPVtVxKM.js",
     "name": "registration-page",
     "src": "pages/registration-page.vue",
     "isDynamicEntry": true,
@@ -814,11 +839,11 @@ const client_manifest = {
       "_DU_PtPHa.js"
     ],
     "css": [
-      "registration-page.D9fsrw1a.css"
+      "registration-page.CL_SXrIo.css"
     ]
   },
-  "registration-page.D9fsrw1a.css": {
-    "file": "registration-page.D9fsrw1a.css",
+  "registration-page.CL_SXrIo.css": {
+    "file": "registration-page.CL_SXrIo.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true

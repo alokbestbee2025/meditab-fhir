@@ -1,4 +1,4 @@
-import { d as defineEventHandler, r as readBody } from '../../_/nitro.mjs';
+import { d as defineEventHandler, r as readBody, c as createError } from '../../_/nitro.mjs';
 import nodemailer from 'nodemailer';
 import 'node:http';
 import 'node:https';
@@ -87,13 +87,27 @@ async function sendEmail(formData) {
 }
 
 const contactMail = defineEventHandler(async (event) => {
-  const body = await readBody(event);
   try {
+    const body = await readBody(event);
+    if (!body.email || !body.firstName || !body.lastName) {
+      throw createError({
+        statusCode: 400,
+        message: "Missing required field"
+      });
+    }
     await sendEmail(body);
-    return { message: "Form submitted successfully!" };
+    return {
+      statusCode: 200,
+      body: {
+        message: "Form submitted successfully!"
+      }
+    };
   } catch (error) {
-    console.error("Error processing form submission:", error);
-    return { statusCode: 500, message: "An error occurred while processing your request." };
+    console.error("Server error:", error);
+    throw createError({
+      statusCode: 500,
+      message: error.message || "Internal server error"
+    });
   }
 });
 
