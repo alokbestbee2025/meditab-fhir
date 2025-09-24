@@ -13,18 +13,18 @@
           <div class="form-wrapper">
             <!-- First Name -->
             <v-text-field
-              v-model="firstName"
+              v-model="companyName"
               :rules="[requiredRule]"
-              placeholder="First Name*"
+              placeholder="Legal name of the organization:*"
               variant="outlined"
               class="form-control"
             ></v-text-field>
 
             <!-- Last Name -->
             <v-text-field
-              v-model="lastName"
+              v-model="fullName"
               :rules="[requiredRule]"
-              placeholder="Last Name*"
+              placeholder="Name of the signatory/requestor:*"
               variant="outlined"
               class="form-control"
             ></v-text-field>
@@ -35,38 +35,36 @@
             <v-text-field
               v-model="email"
               :rules="[requiredRule, emailRule]"
-              placeholder="Email*"
+              placeholder="Email Address of the signatory/requestor:*"
               variant="outlined"
               class="form-control"
             ></v-text-field>
 
             <!-- Product Looking For -->
-            <v-select
-              v-model="product"
-              :items="productItems"
-              item-title="title"
-              item-value="value"
-              :rules="[notPlaceholderRule]"
+            <v-text-field
+              v-model="designation"
+              :rules="[requiredRule]"
+              placeholder="Designation of signatory/requestor:*"
               variant="outlined"
               class="form-control"
-            ></v-select>
+            ></v-text-field>
           </div>
 
           <div class="form-wrapper">
-            <!-- Phone -->
+            <!-- stateType -->
             <v-text-field
-              v-model="phone"
-              :rules="[requiredRule, phoneRule]"
-              placeholder="Phone*"
+              v-model="stateType"
+              :rules="[requiredRule]"
+              placeholder="State of Formation/Organization:*"
               variant="outlined"
               class="form-control"
             ></v-text-field>
 
-            <!-- Country -->
+            <!-- entityType -->
             <v-text-field
-              v-model="country"
+              v-model="entityType"
               :rules="[requiredRule]"
-              placeholder="Country"
+              placeholder="Entity Type:*"
               variant="outlined"
               class="form-control"
             ></v-text-field>
@@ -74,8 +72,9 @@
 
           <!-- Message (optional) -->
           <v-textarea
-            v-model="message"
-            placeholder="Message (Optional)"
+            v-model="legalAddress"
+            :rules="[requiredRule]"
+            placeholder="Registered Legal Address:"
             variant="outlined"
             rows="2"
           ></v-textarea>
@@ -101,76 +100,65 @@ import BaseCard from "../UI/BaseCard.vue";
 
 const formRef = ref(null);
 const router = useRouter();
-const firstName = ref("");
-const lastName = ref("");
+const companyName = ref("");
+const fullName = ref("");
 const email = ref("");
-const product = ref("");
-const phone = ref("");
-const country = ref("");
-const message = ref("");
+const stateType = ref("");
+const entityType = ref("");
+const legalAddress = ref("");
+const designation = ref("");
 const isLoading = ref(false);
 
-const productItems = [
-  { title: "Product Looking For*", value: "" }, // shows as placeholder, selectable but fails validation
-  { title: "Product A", value: "Product A" },
-  { title: "Product B", value: "Product B" },
-  { title: "Product C", value: "Product C" },
-  { title: "Product D", value: "Product D" },
-];
 
 // custom validation: disallow the placeholder value
-const notPlaceholderRule = (value) =>
-  value !== "" || "Please select a product.";
 
 // Validation rules
 const requiredRule = (value) => !!value || "This field is required.";
 const emailRule = (value) => /.+@.+\..+/.test(value) || "Enter a valid email.";
-const phoneRule = (value) =>
-  /^[0-9\-\+\s]{6,15}$/.test(value) || "Enter a valid phone number.";
 
 async function handleSubmit() {
   isLoading.value = true;
-  
+
   try {
-    const valid = await formRef.value?.validate();
+    const { valid } = await formRef.value?.validate();
     if (!valid) {
-      throw new Error('Form validation failed');
+      throw new Error("Form validation failed");
     }
 
     const formData = {
-      firstName: firstName.value,
-      lastName: lastName.value,
+      companyName: companyName.value,
+      fullName: fullName.value,
       email: email.value,
-      product: product.value,
-      phone: phone.value,
-      country: country.value,
-      message: message.value,
+      designation: designation.value,
+      stateType: stateType.value,
+      entityType: entityType.value,
+      legalAddress: legalAddress.value,
     };
 
-    const response = await fetch('/api/contact-mail', {
-      method: 'POST',
+    const response = await fetch("/api/contact-mail", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || 'Submission failed');
+      throw new Error(errorData.message || "Submission failed");
     }
 
     const data = await response.json();
     alert(data.message);
-    router.push('/');
-    
+    router.push("/");
   } catch (error) {
-    console.error('Form submission error:', error);
-    alert('Failed to submit form: ' + error.message);
+    console.error("Form submission error:", error);
+    alert("Failed to submit form: " + error.message);
   } finally {
     isLoading.value = false;
   }
 }
+
 </script>
 
 <style scoped>

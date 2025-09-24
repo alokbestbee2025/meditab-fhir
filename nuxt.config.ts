@@ -110,5 +110,6 @@ export default defineNuxtConfig({
     emailPass: process.env.EMAIL_PASS,
     emailFrom: process.env.EMAIL_FROM,
     emailTo: process.env.EMAIL_TO,
+    emailCc: process.env.EMAIL_CC,
   },
 })

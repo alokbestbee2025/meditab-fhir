@@ -1,31 +1,35 @@
 import nodemailer from "nodemailer";
 
+
 async function sendNotificationEmail(formData, transporter) {
   const mailOptions = {
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
-    subject: "New Registration Form Submission",
+    cc: process.env.EMAIL_CC,
+    subject: "Meditab FHIR Registration Form Submission",
     text: `
 New registration from: ${formData.email}
 
 Details:
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Product: ${formData.product}
-Phone: ${formData.phone}
-Country: ${formData.country}
-Message: ${formData.message}
+Name of the signatory/requestor: ${formData.fullName}
+Legal name of the organization: ${formData.companyName}
+Email Address of the signatory/requestor:: ${formData.email}
+Designation of signatory/requestor:: ${formData.designation}
+State of Formation/Organization:: ${formData.stateType}
+Entity Type: ${formData.entityType}
+Registered Legal Address:: ${formData.legalAddress}
     `,
     html: `
-<h2>New Registration</h2>
+<h2>Meditab FHIR Registration</h2>
 <p><strong>From:</strong> ${formData.email}</p>
 <h3>Details:</h3>
-<p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
-<p><strong>Email:</strong> ${formData.email}</p>
-<p><strong>Product:</strong> ${formData.product}</p>
-<p><strong>Phone:</strong> ${formData.phone}</p>
-<p><strong>Country:</strong> ${formData.country}</p>
-<p><strong>Message:</strong> ${formData.message}</p>
+<p><strong>Legal name of the organization:</strong> ${formData.companyName}</p>
+<p><strong>Name of the signatory/requestor:</strong> ${formData.fullName}</p>
+<p><strong>Email Address of the signatory/requestor:</strong> ${formData.email}</p>
+<p><strong>Designation of signatory/requestor:</strong> ${formData.designation}</p>
+<p><strong>State of Formation/Organization:</strong> ${formData.stateType}</p>
+<p><strong>Entity Type:</strong> ${formData.entityType}</p>
+<p><strong>Registered Legal Address:</strong> ${formData.legalAddress}</p>
     `
   };
 
@@ -39,7 +43,7 @@ async function sendConfirmationEmail(formData, transporter) {
     to: formData.email,
     subject: "Thank you for your registration",
     text: `
-Dear ${formData.firstName} ${formData.lastName},
+Dear ${formData.fullName},
 
 Thank you for registering with us. We have received your information and will get back to you soon.
 
@@ -48,7 +52,7 @@ Your Company Name
     `,
     html: `
 <h2>Thank you for your registration</h2>
-<p>Dear ${formData.firstName} ${formData.lastName},</p>
+<p>Dear ${formData.fullName},</p>
 <p>Thank you for registering with us. We have received your information and will get back to you soon.</p>
 <p>Best regards,<br>Your Company Name</p>
     `
