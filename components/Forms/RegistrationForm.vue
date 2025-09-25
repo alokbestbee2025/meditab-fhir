@@ -82,7 +82,7 @@
 
           <div class="d-flex align-start justify-start">
             <!-- Checkbox -->
-            <v-checkbox :rules="[requiredRule]" v-model="checked" hide-details class="ma-0 pa-0" />
+            <v-checkbox :rules="[checkboxRule]" v-model="checked" hide-details class="ma-0 pa-0" />
 
             <!-- Right-aligned paragraph -->
             <p class="flex-grow-1 ml-5">
@@ -131,7 +131,7 @@ const openDialog = (() => {
 // Validation rules
 const requiredRule = (value) => !!value || "This field is required.";
 const emailRule = (value) => /.+@.+\..+/.test(value) || "Enter a valid email.";
-
+const checkboxRule = (value) => value === true || "You must agree to continue.";
 async function handleSubmit() {
   isLoading.value = true;
 
