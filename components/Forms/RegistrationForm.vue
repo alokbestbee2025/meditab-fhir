@@ -10,7 +10,7 @@
       </div>
       <div v-else>
         <h4 class="mb-4">Please Fil Your Details!</h4>
-        <v-form @submit.prevent="handleSubmit" ref="formRef">
+        <v-form class="formSec" @submit.prevent="handleSubmit" ref="formRef">
           <div class="form-wrapper">
             <!-- First Name -->
             <v-text-field
@@ -75,14 +75,14 @@
           <v-textarea
             v-model="legalAddress"
             :rules="[requiredRule]"
-            placeholder="Registered Legal Address:"
+            placeholder="Registered Legal Address:*"
             variant="outlined"
             rows="2"
           ></v-textarea>
 
           <div class="d-flex align-start justify-start">
             <!-- Checkbox -->
-            <v-checkbox v-model="checked" hide-details class="ma-0 pa-0" />
+            <v-checkbox :rules="[requiredRule]" v-model="checked" hide-details class="ma-0 pa-0" />
 
             <!-- Right-aligned paragraph -->
             <p class="flex-grow-1 ml-5">
@@ -197,6 +197,9 @@ async function handleSubmit() {
   font-weight: 500;
   color: #1e3c61;
   cursor: pointer;
+}
+.formSec :deep(.v-selection-control) {
+  align-items: start !important;
 }
 @media (max-width: 767px) {
   .v-form .form-wrapper {

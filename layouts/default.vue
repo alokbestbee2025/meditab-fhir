@@ -30,9 +30,6 @@
               <NuxtLink exact-active-class="active-link" to="/build-apps"
                 >Build Apps</NuxtLink
               >
-              <NuxtLink exact-active-class="active-link" to="/documentation"
-                >Documentation</NuxtLink
-              >
             </div>
           </v-col>
         </v-row>
@@ -94,9 +91,6 @@
         <!-- 3. Other Static Links -->
         <v-list-item to="/build-apps" link @click="drawer = false">
           <v-list-item-title>Build Apps</v-list-item-title>
-        </v-list-item>
-        <v-list-item to="/documentation" link @click="drawer = false">
-          <v-list-item-title>Documentation</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

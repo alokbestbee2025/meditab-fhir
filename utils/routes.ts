@@ -9,7 +9,6 @@ export async function generateRoutes(): Promise<string[]> {
   const staticRoutes = [
     '/',
     '/build-apps',
-    '/documentation'
   ]
 
   try {
