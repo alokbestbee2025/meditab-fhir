@@ -67,12 +67,16 @@ Your Company Name
 export async function sendEmail(formData) {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    secure: false, // Use TLS
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
+  port: parseInt(process.env.EMAIL_PORT || '587'), // Ensure it's parsed as number
+  secure: false, // Use 'false' for port 587
+  requireTLS: true, // Crucial for STARTTLS on port 587
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  logger: true,
+  debug: true,
+  timeout: 20000,
   });
 
   try {
