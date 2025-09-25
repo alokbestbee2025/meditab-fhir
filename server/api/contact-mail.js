@@ -12,7 +12,8 @@ export default defineEventHandler(async (event) => {
       !body.designation ||
       !body.stateType ||
       !body.entityType ||
-      !body.legalAddress
+      !body.legalAddress ||
+      !body.termsStatus
     ) {
       throw createError({
         statusCode: 400,

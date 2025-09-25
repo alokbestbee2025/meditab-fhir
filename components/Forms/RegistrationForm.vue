@@ -1,6 +1,7 @@
 <template>
   <v-sheet class="mx-auto pa-4" max-width="800px">
     <base-card>
+    <terms-and-condition v-model="dialogVisible"></terms-and-condition>
       <div class="d-flex justify-center align-center" v-if="isLoading">
         <v-progress-circular
           color="primary"
@@ -79,6 +80,16 @@
             rows="2"
           ></v-textarea>
 
+          <div class="d-flex align-start justify-start">
+            <!-- Checkbox -->
+            <v-checkbox v-model="checked" hide-details class="ma-0 pa-0" />
+
+            <!-- Right-aligned paragraph -->
+            <p class="flex-grow-1 ml-5">
+              I hereby confirm that I have read, understood, and agree to abide by the <span class="weightedFont" @click="openDialog">terms and conditions of Meditab FHIR</span>, including all policies, guidelines, and obligations associated with its use.
+            </p>
+          </div>
+
           <!-- Submit Button -->
           <v-btn
             class="mt-4 mx-auto submit-button"
@@ -89,11 +100,13 @@
           >
         </v-form>
       </div>
+      
     </base-card>
   </v-sheet>
 </template>
 
 <script setup>
+import TermsAndCondition from "./TermsAndCondition.vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import BaseCard from "../UI/BaseCard.vue";
@@ -107,9 +120,12 @@ const stateType = ref("");
 const entityType = ref("");
 const legalAddress = ref("");
 const designation = ref("");
+const checked = ref(false);
+const dialogVisible = ref(false);
 const isLoading = ref(false);
-
-
+const openDialog = (() => {
+  dialogVisible.value = true;
+})
 // custom validation: disallow the placeholder value
 
 // Validation rules
@@ -133,6 +149,7 @@ async function handleSubmit() {
       stateType: stateType.value,
       entityType: entityType.value,
       legalAddress: legalAddress.value,
+      termsStatus: checked.value ? "Agree" : "Not Agree",
     };
 
     const response = await fetch("/api/contact-mail", {
@@ -158,7 +175,6 @@ async function handleSubmit() {
     isLoading.value = false;
   }
 }
-
 </script>
 
 <style scoped>
@@ -173,6 +189,14 @@ async function handleSubmit() {
 }
 .submit-button {
   min-width: 200px !important;
+}
+.dialog-card-util{
+  max-width: 70vw;
+}
+.weightedFont{
+  font-weight: 500;
+  color: #1e3c61;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
   .v-form .form-wrapper {

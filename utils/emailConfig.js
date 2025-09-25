@@ -17,7 +17,8 @@ Email Address of the signatory/requestor:: ${formData.email}
 Designation of signatory/requestor:: ${formData.designation}
 State of Formation/Organization:: ${formData.stateType}
 Entity Type: ${formData.entityType}
-Registered Legal Address:: ${formData.legalAddress}
+Registered Legal Address: ${formData.legalAddress}
+Terms & Condition: ${formData.termsStatus}
     `,
     html: `
 <h2>Meditab FHIR Registration</h2>
@@ -30,6 +31,7 @@ Registered Legal Address:: ${formData.legalAddress}
 <p><strong>State of Formation/Organization:</strong> ${formData.stateType}</p>
 <p><strong>Entity Type:</strong> ${formData.entityType}</p>
 <p><strong>Registered Legal Address:</strong> ${formData.legalAddress}</p>
+<p><strong>Terms & Condition: ${formData.termsStatus}</p>
     `
   };
 

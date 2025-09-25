@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     'nitro:config': async (nitroConfig) => {
       try {
         const routes = await generateRoutes();
-        console.log('Generated routes:', routes)
         if (nitroConfig.prerender) {
           nitroConfig.prerender.routes = routes
         }
