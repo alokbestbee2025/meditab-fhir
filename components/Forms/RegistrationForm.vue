@@ -138,36 +138,42 @@ async function handleSubmit() {
   try {
     const { valid } = await formRef.value?.validate();
     if (!valid) {
-      throw new Error("Form validation failed");
+      throw new Error("Please Fill the Required Fields");
     }
 
-    const formData = {
-      companyName: companyName.value,
-      fullName: fullName.value,
-      email: email.value,
-      designation: designation.value,
-      stateType: stateType.value,
-      entityType: entityType.value,
-      legalAddress: legalAddress.value,
-      termsStatus: checked.value ? "Agree" : "Not Agree",
-    };
+    // const formData = {
+    //   companyName: companyName.value,
+    //   fullName: fullName.value,
+    //   email: email.value,
+    //   designation: designation.value,
+    //   stateType: stateType.value,
+    //   entityType: entityType.value,
+    //   legalAddress: legalAddress.value,
+    //   termsStatus: checked.value ? "Agree" : "Not Agree",
+    // };
 
-    const response = await fetch("/api/contact-mail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    // const response = await fetch("/api/contact-mail", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formData),
+    // });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Submission failed");
-    }
+    // if (!response.ok) {
+    //   const errorData = await response.json();
+    //   throw new Error(errorData.message || "Submission failed");
+    // }
 
-    const data = await response.json();
-    alert(data.message);
-    router.push("/");
+    // const data = await response.json();
+    // alert(data.message);
+    companyName.value = "";
+    email.value="";
+    designation.value = "";
+    stateType.value = "";
+    entityType.value ="";
+    legalAddress.value = "";
+    checked.value = null;
   } catch (error) {
     console.error("Form submission error:", error);
     alert("Failed to submit form: " + error.message);

@@ -8,9 +8,6 @@ async function sendNotificationEmail(formData, transporter) {
     cc: process.env.EMAIL_CC,
     subject: "Meditab FHIR Registration Form Submission",
     text: `
-New registration from: ${formData.email}
-
-Details:
 Name of the signatory/requestor: ${formData.fullName}
 Legal name of the organization: ${formData.companyName}
 Email Address of the signatory/requestor:: ${formData.email}
@@ -22,8 +19,6 @@ Terms & Condition: ${formData.termsStatus}
     `,
     html: `
 <h2>Meditab FHIR Registration</h2>
-<p><strong>From:</strong> ${formData.email}</p>
-<h3>Details:</h3>
 <p><strong>Legal name of the organization:</strong> ${formData.companyName}</p>
 <p><strong>Name of the signatory/requestor:</strong> ${formData.fullName}</p>
 <p><strong>Email Address of the signatory/requestor:</strong> ${formData.email}</p>
@@ -50,7 +45,7 @@ Dear ${formData.fullName},
 Thank you for registering with us. We have received your information and will get back to you soon.
 
 Best regards,
-Your Company Name
+Meditab Software
     `,
     html: `
 <h2>Thank you for your registration</h2>
@@ -67,16 +62,12 @@ Your Company Name
 export async function sendEmail(formData) {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-  port: parseInt(process.env.EMAIL_PORT || '587'), // Ensure it's parsed as number
-  secure: false, // Use 'false' for port 587
-  requireTLS: true, // Crucial for STARTTLS on port 587
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  logger: true,
-  debug: true,
-  timeout: 20000,
+    port: process.env.EMAIL_PORT,
+    secure: false, // Use TLS
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
   });
 
   try {
