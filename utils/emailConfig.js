@@ -1,6 +1,15 @@
 import nodemailer from "nodemailer";
+import * as AWS from '@aws-sdk/client-sesv2';
 
+const { SESv2Client, SendEmailCommand } = AWS;
 
+const sesClient = new SESv2Client({
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
+});
 async function sendNotificationEmail(formData, transporter) {
   const mailOptions = {
     from: process.env.EMAIL_FROM,
@@ -61,13 +70,7 @@ Meditab Software
 
 export async function sendEmail(formData) {
   const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    secure: false, // Use TLS
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
+    SES: { sesClient, SendEmailCommand },
   });
 
   try {

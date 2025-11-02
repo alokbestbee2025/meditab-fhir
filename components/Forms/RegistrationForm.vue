@@ -9,7 +9,7 @@
         ></v-progress-circular>
       </div>
       <div v-else>
-        <h4 class="mb-4">Please Fil Your Details!</h4>
+        <h4 class="mb-4">Please Fill Your Details!</h4>
         <v-form class="formSec" @submit.prevent="handleSubmit" ref="formRef">
           <div class="form-wrapper">
             <!-- First Name -->
